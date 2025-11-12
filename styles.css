@@ -97,7 +97,7 @@ h3.subheading { font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem); margin-top: 40px;
   position: absolute; inset: 0;
   background:
     linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%),
-    url('assets/hero-desktop.webp') center center / cover no-repeat;
+    url('assets/hero.jpg') center center / cover no-repeat;
 }
 .hero__content { position: relative; padding: clamp(40px, 6vw, 80px) 0; max-width: 800px; }
 .hero__content h1 { text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
@@ -153,11 +153,11 @@ h3.subheading { font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem); margin-top: 40px;
 .benefits-numbered li { margin-bottom: 14px; }
 
 /* Section: CTA */
-.cta { background: var(--crimson); color: var(--white); padding: 80px 0; }
+.cta { background: var(--warm-beige); color: var(--black); padding: 80px 0; }
 .cta-text { text-align: center; font-size: clamp(1.125rem, 1.2vw + 1rem, 1.25rem); margin: 0 auto 40px; max-width: 800px; opacity: 0.95; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
 .cta-steps-heading { text-align: center; margin: 8px 0 24px; }
 .steps { list-style: decimal inside; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 0; margin: 0; }
-.steps li { background: rgba(255,255,255,0.15); border-radius: 12px; padding: 32px 24px; text-align: center; }
+.steps li { background: var(--white); border: 1px solid var(--cool-grey); border-radius: 12px; padding: 32px 24px; text-align: center; }
 .step-icon { font-size: 56px; color: var(--mint); margin-bottom: 12px; }
 .step-num { color: var(--mint); font-weight: 700; margin-bottom: 12px; }
 .step-title { font-weight: 700; margin-bottom: 8px; }
@@ -202,7 +202,7 @@ a:focus { outline: 2px solid var(--deep-blue); outline-offset: 2px; }
   .hero { min-height: 80vh; }
   .hero__media { background:
     linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%),
-    url('assets/hero-mobile.webp') center center / cover no-repeat;
+    url('assets/hero.jpg') center center / cover no-repeat;
   }
   .benefits { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr; }

@@ -61,7 +61,7 @@ function setupHeroImageFallback() {
   const hero = document.querySelector('.hero__media');
   if (!hero) return;
   const test = new Image();
-  test.src = 'assets/hero-desktop.webp';
+  test.src = 'assets/hero.jpg';
   test.onload = () => { /* background already set via CSS */ };
   test.onerror = () => {
     // Fallback to gradient-only if image missing
@@ -74,4 +74,3 @@ document.addEventListener('DOMContentLoaded', () => {
   setupFocusVisible();
   setupHeroImageFallback();
 });
-
