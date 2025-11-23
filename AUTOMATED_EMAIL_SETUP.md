@@ -317,10 +317,37 @@ Then run the trigger SQL again.
 The email includes:
 - ✅ Personalized greeting with their name
 - ✅ Class date, time (in their timezone), and duration
+- ✅ EST reference time (e.g., "Tuesday, December 17, 2024 at 7:00 PM EST")
 - ✅ Different messages for 4-hour / Part 1 / Part 2
 - ✅ Warning for Part 1 to also register for Part 2
 - ✅ Confirmation for Part 2 if they have Part 1
 - ✅ Professional SHE IS AI branding
+
+### How Timezone Display Works:
+
+The email shows times in **two formats**:
+
+1. **Primary Time:** User's local timezone (automatically detected)
+   - Example: "7:00 PM – 9:00 PM PST" (if user is in Pacific timezone)
+
+2. **Reference Time:** Original EST time (always included for context)
+   - Example: "Reference: Tuesday, December 17, 2024 at 7:00 PM EST"
+
+This helps users understand:
+- When the class starts in their local time
+- The original scheduled time for coordination
+- Confirmation they registered for the correct session
+
+**Example Email Display:**
+
+```
+Your Class Details:
+• Date: Tuesday, December 17, 2024
+• Time: 4:00 PM – 6:00 PM PST
+• Duration: 2 hours
+• Reference: Tuesday, December 17, 2024 at 7:00 PM EST
+• Organization: Example Corp
+```
 
 ### Customize Email Content:
 

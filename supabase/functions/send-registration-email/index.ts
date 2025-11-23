@@ -79,6 +79,26 @@ serve(async (req) => {
     // Duration text
     const duration = is4Hour ? '4 hours' : '2 hours'
 
+    // Format EST reference time (always show original EST time for consistency)
+    const estDateFormatter = new Intl.DateTimeFormat('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'America/New_York'
+    })
+
+    const estTimeFormatter = new Intl.DateTimeFormat('en-US', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+      timeZone: 'America/New_York'
+    })
+
+    const estDate = estDateFormatter.format(classDate)
+    const estTime = estTimeFormatter.format(classDate)
+    const estReference = `${estDate} at ${estTime} EST`
+
     // Build class-specific message
     let additionalMessage = ''
     let additionalMessageStyle = ''
@@ -189,6 +209,14 @@ serve(async (req) => {
                           ${duration}
                         </td>
                       </tr>
+                      <tr>
+                        <td style="padding: 8px 0;">
+                          <strong style="color: #333;">Reference:</strong>
+                        </td>
+                        <td style="padding: 8px 0; color: #666; font-size: 14px;">
+                          ${estReference}
+                        </td>
+                      </tr>
                       ${organization ? `
                       <tr>
                         <td style="padding: 8px 0;">
@@ -263,6 +291,7 @@ Your Class Details:
 • Date: ${formattedDate}
 • Time: ${formattedStartTime} – ${formattedEndTime} ${tzName}
 • Duration: ${duration}
+• Reference: ${estReference}
 ${organization ? `• Organization: ${organization}` : ''}
 
 ${isPart1 ? '⚠️ IMPORTANT: This is Part 1 of a 2-part training. You MUST also register for a Part 2 session to complete the training. Register for Part 2 here: ' + WEBSITE_URL + '/#registration-cta' : ''}
