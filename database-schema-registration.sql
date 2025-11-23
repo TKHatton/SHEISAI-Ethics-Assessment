@@ -322,10 +322,10 @@ CREATE POLICY profiles_self ON profiles
 
 -- REGISTRATIONS: Anyone can insert (register), but cannot read
 -- This protects user privacy - registrations are stored but not publicly accessible
+-- FIXED: INSERT policies should only use WITH CHECK, not USING
 DROP POLICY IF EXISTS registrations_insert ON registrations;
 CREATE POLICY registrations_insert ON registrations
   FOR INSERT
-  USING (TRUE)
   WITH CHECK (TRUE);
 
 COMMENT ON POLICY registrations_insert ON registrations IS 'Allow anyone to submit registration (privacy protected - no public reads)';
@@ -334,7 +334,6 @@ COMMENT ON POLICY registrations_insert ON registrations IS 'Allow anyone to subm
 DROP POLICY IF EXISTS aa_insert_own ON assessment_attempts;
 CREATE POLICY aa_insert_own ON assessment_attempts
   FOR INSERT
-  USING (auth.uid() = user_id)
   WITH CHECK (auth.uid() = user_id);
 
 DROP POLICY IF EXISTS aa_update_own ON assessment_attempts;
@@ -356,7 +355,6 @@ CREATE POLICY aa_select_own ON assessment_attempts
 -- ============================================================================
 -- Run these queries to verify everything was created successfully
 
--- Check that all tables exist
 DO $$
 DECLARE
   tables TEXT[] := ARRAY['profiles', 'registrations', 'assessment_attempts', 'identity_alerts'];
