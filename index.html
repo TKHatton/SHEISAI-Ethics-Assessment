@@ -8,10 +8,20 @@
     <link rel="icon" type="image/jpeg" href="assets/favicon.jpg" />
     <link rel="preload" href="styles.css" as="style" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
     <script defer src="script.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="header" role="banner">
+      <div class="container header__content">
+        <a href="/" class="logo" aria-label="SHE IS AI - Return to homepage">
+          <img src="assets/White Transparent Logo.png" alt="SHE IS AI logo" />
+        </a>
+      </div>
+    </header>
 
     <main id="main">
       <!-- Section 1: Hero -->
@@ -96,53 +106,134 @@
       <section class="section schedule" aria-labelledby="schedule-heading">
         <div class="container">
           <h2 id="schedule-heading" class="section-title">Choose Your Session</h2>
-          <p class="section-subtitle">We're offering 4 exclusive training sessions across global time zones. Pick the one that works for you.</p>
+          <p class="section-subtitle">We're offering training sessions across global time zones. Times shown in your local timezone. Pick the one that works for you.</p>
 
-          <div class="session-grid">
-            <!-- Card Template repeated 4 times -->
-            <article class="session-card" aria-labelledby="s1-title" aria-describedby="s1-details">
-              <h3 id="s1-title" class="session-kicker">SESSION 1</h3>
-              <div class="session-icon" aria-hidden="true">📅</div>
-              <dl id="s1-details" class="session-details">
-                <div><dt>Date:</dt><dd><time datetime="2025-12-04">December 4, 2025</time></dd></div>
-                <div><dt>Time:</dt><dd>09:00 – 11:00</dd></div>
-                <div><dt>Time Zone:</dt><dd>UTC</dd></div>
-              </dl>
-              <a class="btn btn-secondary" href="#registration-cta" aria-describedby="s1-details" aria-label="Register for Session 1 on December 4, 2025 at 09:00 UTC">Register</a>
-            </article>
+          <!-- 4-Hour Classes -->
+          <div class="schedule-group">
+            <h3 class="schedule-group-title">4-Hour Classes</h3>
+            <div class="session-grid">
+              <article class="session-card" aria-labelledby="s1-title" aria-describedby="s1-details">
+                <h4 id="s1-title" class="session-kicker">4-HOUR SESSION</h4>
+                <div class="session-icon" aria-hidden="true">📅</div>
+                <dl id="s1-details" class="session-details">
+                  <div><dt>Date:</dt><dd><time datetime="2024-12-09">December 9, 2024</time></dd></div>
+                  <div><dt>Time:</dt><dd class="session-time" data-datetime="2024-12-09T10:00:00-05:00" data-duration="4">Loading...</dd></div>
+                  <div><dt>Duration:</dt><dd>4 hours</dd></div>
+                </dl>
+                <button class="btn btn-secondary" data-open-modal data-class="4h-dec9" aria-describedby="s1-details" aria-label="Register for 4-hour session on December 9, 2024">Register</button>
+              </article>
 
-            <article class="session-card" aria-labelledby="s2-title" aria-describedby="s2-details">
-              <h3 id="s2-title" class="session-kicker">SESSION 2</h3>
-              <div class="session-icon" aria-hidden="true">📅</div>
-              <dl id="s2-details" class="session-details">
-                <div><dt>Date:</dt><dd><time datetime="2025-12-04">December 4, 2025</time></dd></div>
-                <div><dt>Time:</dt><dd>14:00 – 16:00</dd></div>
-                <div><dt>Time Zone:</dt><dd>UTC</dd></div>
-              </dl>
-              <a class="btn btn-secondary" href="#registration-cta" aria-describedby="s2-details" aria-label="Register for Session 2 on December 4, 2025 at 14:00 UTC">Register</a>
-            </article>
+              <article class="session-card" aria-labelledby="s2-title" aria-describedby="s2-details">
+                <h4 id="s2-title" class="session-kicker">4-HOUR SESSION</h4>
+                <div class="session-icon" aria-hidden="true">📅</div>
+                <dl id="s2-details" class="session-details">
+                  <div><dt>Date:</dt><dd><time datetime="2024-12-13">December 13, 2024</time></dd></div>
+                  <div><dt>Time:</dt><dd class="session-time" data-datetime="2024-12-13T10:00:00-05:00" data-duration="4">Loading...</dd></div>
+                  <div><dt>Duration:</dt><dd>4 hours</dd></div>
+                </dl>
+                <button class="btn btn-secondary" data-open-modal data-class="4h-dec13" aria-describedby="s2-details" aria-label="Register for 4-hour session on December 13, 2024">Register</button>
+              </article>
+            </div>
+          </div>
 
-            <article class="session-card" aria-labelledby="s3-title" aria-describedby="s3-details">
-              <h3 id="s3-title" class="session-kicker">SESSION 3</h3>
-              <div class="session-icon" aria-hidden="true">📅</div>
-              <dl id="s3-details" class="session-details">
-                <div><dt>Date:</dt><dd><time datetime="2025-12-04">December 4, 2025</time></dd></div>
-                <div><dt>Time:</dt><dd>19:00 – 21:00</dd></div>
-                <div><dt>Time Zone:</dt><dd>UTC</dd></div>
-              </dl>
-              <a class="btn btn-secondary" href="#registration-cta" aria-describedby="s3-details" aria-label="Register for Session 3 on December 4, 2025 at 19:00 UTC">Register</a>
-            </article>
+          <!-- 2-Hour Classes - Part 1 -->
+          <div class="schedule-group">
+            <h3 class="schedule-group-title">2-Hour Classes - Part 1</h3>
+            <div class="session-grid">
+              <article class="session-card" aria-labelledby="s3-title" aria-describedby="s3-details">
+                <h4 id="s3-title" class="session-kicker">PART 1</h4>
+                <div class="session-icon" aria-hidden="true">📅</div>
+                <dl id="s3-details" class="session-details">
+                  <div><dt>Date:</dt><dd><time datetime="2024-12-10">December 10, 2024</time></dd></div>
+                  <div><dt>Time:</dt><dd class="session-time" data-datetime="2024-12-10T10:00:00-05:00" data-duration="2">Loading...</dd></div>
+                  <div><dt>Duration:</dt><dd>2 hours</dd></div>
+                </dl>
+                <button class="btn btn-secondary" data-open-modal data-class="p1-dec10-am" aria-describedby="s3-details" aria-label="Register for Part 1 session on December 10, 2024">Register</button>
+              </article>
 
-            <article class="session-card" aria-labelledby="s4-title" aria-describedby="s4-details">
-              <h3 id="s4-title" class="session-kicker">SESSION 4</h3>
-              <div class="session-icon" aria-hidden="true">📅</div>
-              <dl id="s4-details" class="session-details">
-                <div><dt>Date:</dt><dd><time datetime="2025-12-05">December 5, 2025</time></dd></div>
-                <div><dt>Time:</dt><dd>01:00 – 03:00</dd></div>
-                <div><dt>Time Zone:</dt><dd>UTC</dd></div>
-              </dl>
-              <a class="btn btn-secondary" href="#registration-cta" aria-describedby="s4-details" aria-label="Register for Session 4 on December 5, 2025 at 01:00 UTC">Register</a>
-            </article>
+              <article class="session-card" aria-labelledby="s4-title" aria-describedby="s4-details">
+                <h4 id="s4-title" class="session-kicker">PART 1 (RECORDED)</h4>
+                <div class="session-icon" aria-hidden="true">📅</div>
+                <dl id="s4-details" class="session-details">
+                  <div><dt>Date:</dt><dd><time datetime="2024-12-10">December 10, 2024</time></dd></div>
+                  <div><dt>Time:</dt><dd class="session-time" data-datetime="2024-12-10T15:00:00+00:00" data-duration="2">Loading...</dd></div>
+                  <div><dt>Duration:</dt><dd>2 hours</dd></div>
+                </dl>
+                <button class="btn btn-secondary" data-open-modal data-class="p1-dec10-uk" aria-describedby="s4-details" aria-label="Register for Part 1 recorded session on December 10, 2024">Register</button>
+              </article>
+
+              <article class="session-card" aria-labelledby="s5-title" aria-describedby="s5-details">
+                <h4 id="s5-title" class="session-kicker">PART 1</h4>
+                <div class="session-icon" aria-hidden="true">📅</div>
+                <dl id="s5-details" class="session-details">
+                  <div><dt>Date:</dt><dd><time datetime="2024-12-11">December 11, 2024</time></dd></div>
+                  <div><dt>Time:</dt><dd class="session-time" data-datetime="2024-12-11T10:00:00-05:00" data-duration="2">Loading...</dd></div>
+                  <div><dt>Duration:</dt><dd>2 hours</dd></div>
+                </dl>
+                <button class="btn btn-secondary" data-open-modal data-class="p1-dec11-am" aria-describedby="s5-details" aria-label="Register for Part 1 session on December 11, 2024">Register</button>
+              </article>
+
+              <article class="session-card" aria-labelledby="s6-title" aria-describedby="s6-details">
+                <h4 id="s6-title" class="session-kicker">PART 1</h4>
+                <div class="session-icon" aria-hidden="true">📅</div>
+                <dl id="s6-details" class="session-details">
+                  <div><dt>Date:</dt><dd><time datetime="2024-12-11">December 11, 2024</time></dd></div>
+                  <div><dt>Time:</dt><dd class="session-time" data-datetime="2024-12-11T17:00:00-05:00" data-duration="2">Loading...</dd></div>
+                  <div><dt>Duration:</dt><dd>2 hours</dd></div>
+                </dl>
+                <button class="btn btn-secondary" data-open-modal data-class="p1-dec11-pm" aria-describedby="s6-details" aria-label="Register for Part 1 session on December 11, 2024">Register</button>
+              </article>
+            </div>
+          </div>
+
+          <!-- 2-Hour Classes - Part 2 -->
+          <div class="schedule-group">
+            <h3 class="schedule-group-title">2-Hour Classes - Part 2</h3>
+            <div class="session-grid">
+              <article class="session-card" aria-labelledby="s7-title" aria-describedby="s7-details">
+                <h4 id="s7-title" class="session-kicker">PART 2</h4>
+                <div class="session-icon" aria-hidden="true">📅</div>
+                <dl id="s7-details" class="session-details">
+                  <div><dt>Date:</dt><dd><time datetime="2024-12-17">December 17, 2024</time></dd></div>
+                  <div><dt>Time:</dt><dd class="session-time" data-datetime="2024-12-17T15:00:00+00:00" data-duration="2">Loading...</dd></div>
+                  <div><dt>Duration:</dt><dd>2 hours</dd></div>
+                </dl>
+                <button class="btn btn-secondary" data-open-modal data-class="p2-dec17-uk" aria-describedby="s7-details" aria-label="Register for Part 2 session on December 17, 2024">Register</button>
+              </article>
+
+              <article class="session-card" aria-labelledby="s8-title" aria-describedby="s8-details">
+                <h4 id="s8-title" class="session-kicker">PART 2</h4>
+                <div class="session-icon" aria-hidden="true">📅</div>
+                <dl id="s8-details" class="session-details">
+                  <div><dt>Date:</dt><dd><time datetime="2024-12-17">December 17, 2024</time></dd></div>
+                  <div><dt>Time:</dt><dd class="session-time" data-datetime="2024-12-17T19:00:00-05:00" data-duration="2">Loading...</dd></div>
+                  <div><dt>Duration:</dt><dd>2 hours</dd></div>
+                </dl>
+                <button class="btn btn-secondary" data-open-modal data-class="p2-dec17-pm" aria-describedby="s8-details" aria-label="Register for Part 2 session on December 17, 2024">Register</button>
+              </article>
+
+              <article class="session-card" aria-labelledby="s9-title" aria-describedby="s9-details">
+                <h4 id="s9-title" class="session-kicker">PART 2</h4>
+                <div class="session-icon" aria-hidden="true">📅</div>
+                <dl id="s9-details" class="session-details">
+                  <div><dt>Date:</dt><dd><time datetime="2024-12-18">December 18, 2024</time></dd></div>
+                  <div><dt>Time:</dt><dd class="session-time" data-datetime="2024-12-18T10:00:00-05:00" data-duration="2">Loading...</dd></div>
+                  <div><dt>Duration:</dt><dd>2 hours</dd></div>
+                </dl>
+                <button class="btn btn-secondary" data-open-modal data-class="p2-dec18-am" aria-describedby="s9-details" aria-label="Register for Part 2 session on December 18, 2024">Register</button>
+              </article>
+
+              <article class="session-card" aria-labelledby="s10-title" aria-describedby="s10-details">
+                <h4 id="s10-title" class="session-kicker">PART 2</h4>
+                <div class="session-icon" aria-hidden="true">📅</div>
+                <dl id="s10-details" class="session-details">
+                  <div><dt>Date:</dt><dd><time datetime="2024-12-18">December 18, 2024</time></dd></div>
+                  <div><dt>Time:</dt><dd class="session-time" data-datetime="2024-12-18T17:00:00-05:00" data-duration="2">Loading...</dd></div>
+                  <div><dt>Duration:</dt><dd>2 hours</dd></div>
+                </dl>
+                <button class="btn btn-secondary" data-open-modal data-class="p2-dec18-pm" aria-describedby="s10-details" aria-label="Register for Part 2 session on December 18, 2024">Register</button>
+              </article>
+            </div>
           </div>
 
           <aside class="note" role="note">
@@ -383,6 +474,13 @@
 
       <!-- Section 11: Footer -->
       <footer class="footer" aria-labelledby="footer-heading">
+        <div class="container">
+          <div class="footer__logo">
+            <a href="/" aria-label="SHE IS AI - Return to homepage">
+              <img src="assets/White Transparent Logo.png" alt="SHE IS AI logo" />
+            </a>
+          </div>
+        </div>
         <div class="container footer__grid">
           <div class="footer__col">
             <h3 id="footer-heading">Have Questions?</h3>
@@ -418,5 +516,173 @@
         </div>
       </footer>
     </main>
+
+    <!-- Registration Modal -->
+    <div id="registration-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal-overlay" data-close-modal></div>
+      <div class="modal-content">
+        <button class="modal-close" data-close-modal aria-label="Close registration form">×</button>
+
+        <h2 id="modal-title" class="modal-title">Register for Ethics Training</h2>
+
+        <!-- Important Notice -->
+        <div class="alert alert-warning" role="alert">
+          <span class="alert-icon" aria-hidden="true">⚠️</span>
+          <strong>IMPORTANT:</strong> 2-hour classes require BOTH Part 1 AND Part 2 to complete the training. 4-hour classes are complete in one session.
+        </div>
+
+        <!-- Registration Form -->
+        <form id="registration-form" novalidate>
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="reg-name" class="form-label">
+              Full Name <span class="required" aria-label="required">*</span>
+            </label>
+            <input
+              type="text"
+              id="reg-name"
+              name="fullName"
+              class="form-input"
+              required
+              aria-required="true"
+              placeholder="Enter your full name"
+            />
+            <span class="form-error" id="name-error" role="alert"></span>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="reg-email" class="form-label">
+              Email Address <span class="required" aria-label="required">*</span>
+            </label>
+            <input
+              type="email"
+              id="reg-email"
+              name="email"
+              class="form-input"
+              required
+              aria-required="true"
+              placeholder="your.email@example.com"
+            />
+            <span class="form-error" id="email-error" role="alert"></span>
+          </div>
+
+          <!-- Organization (Optional) -->
+          <div class="form-group">
+            <label for="reg-org" class="form-label">
+              Organization <span class="optional">(optional)</span>
+            </label>
+            <input
+              type="text"
+              id="reg-org"
+              name="organization"
+              class="form-input"
+              placeholder="Your organization name"
+            />
+          </div>
+
+          <!-- Class Selection -->
+          <div class="form-group">
+            <label for="reg-class" class="form-label">
+              Select Your Class <span class="required" aria-label="required">*</span>
+            </label>
+            <select
+              id="reg-class"
+              name="classSelection"
+              class="form-select"
+              required
+              aria-required="true"
+            >
+              <option value="">-- Choose a class --</option>
+
+              <optgroup label="✓ 4-Hour Classes (Complete in One Session)">
+                <option value="4h-dec9" data-type="4-hour" data-datetime="2024-12-09T10:00:00-05:00" data-duration="4">
+                  Tuesday, December 9, 2024 - 4 hours
+                </option>
+                <option value="4h-dec13" data-type="4-hour" data-datetime="2024-12-13T10:00:00-05:00" data-duration="4">
+                  Saturday, December 13, 2024 - 4 hours
+                </option>
+              </optgroup>
+
+              <optgroup label="1️⃣ Part 1 Classes (2 hours) - MUST ALSO REGISTER FOR PART 2">
+                <option value="p1-dec10-am" data-type="part1" data-datetime="2024-12-10T10:00:00-05:00" data-duration="2">
+                  Wednesday, December 10, 2024 (Morning) - Part 1
+                </option>
+                <option value="p1-dec10-uk" data-type="part1" data-datetime="2024-12-10T15:00:00+00:00" data-duration="2">
+                  Wednesday, December 10, 2024 (UK Time) - Part 1 (Recorded)
+                </option>
+                <option value="p1-dec11-am" data-type="part1" data-datetime="2024-12-11T10:00:00-05:00" data-duration="2">
+                  Thursday, December 11, 2024 (Morning) - Part 1
+                </option>
+                <option value="p1-dec11-pm" data-type="part1" data-datetime="2024-12-11T17:00:00-05:00" data-duration="2">
+                  Thursday, December 11, 2024 (Evening) - Part 1
+                </option>
+              </optgroup>
+
+              <optgroup label="2️⃣ Part 2 Classes (2 hours) - MUST ALSO REGISTER FOR PART 1">
+                <option value="p2-dec17-uk" data-type="part2" data-datetime="2024-12-17T15:00:00+00:00" data-duration="2">
+                  Tuesday, December 17, 2024 (UK Time) - Part 2
+                </option>
+                <option value="p2-dec17-pm" data-type="part2" data-datetime="2024-12-17T19:00:00-05:00" data-duration="2">
+                  Tuesday, December 17, 2024 (Evening) - Part 2
+                </option>
+                <option value="p2-dec18-am" data-type="part2" data-datetime="2024-12-18T10:00:00-05:00" data-duration="2">
+                  Wednesday, December 18, 2024 (Morning) - Part 2
+                </option>
+                <option value="p2-dec18-pm" data-type="part2" data-datetime="2024-12-18T17:00:00-05:00" data-duration="2">
+                  Wednesday, December 18, 2024 (Evening) - Part 2
+                </option>
+              </optgroup>
+            </select>
+            <span class="form-error" id="class-error" role="alert"></span>
+            <div id="class-time-display" class="class-time-info" role="status" aria-live="polite"></div>
+          </div>
+
+          <!-- Part 1/2 Acknowledgment (shown conditionally) -->
+          <div id="part-acknowledgment" class="form-group" style="display: none;">
+            <div class="checkbox-wrapper alert alert-info">
+              <input
+                type="checkbox"
+                id="reg-acknowledge"
+                name="acknowledge"
+                class="form-checkbox"
+              />
+              <label for="reg-acknowledge" class="checkbox-label">
+                <strong>I understand that Part 1 and Part 2 classes must BOTH be completed to finish the training.</strong> I will register for the other part separately.
+                <span class="required" aria-label="required">*</span>
+              </label>
+            </div>
+            <span class="form-error" id="acknowledge-error" role="alert"></span>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-large" id="submit-btn">
+              Complete Registration
+            </button>
+            <button type="button" class="btn btn-secondary-outline" data-close-modal>
+              Cancel
+            </button>
+          </div>
+        </form>
+
+        <!-- Success Message (hidden initially) -->
+        <div id="success-message" class="success-message" style="display: none;" role="alert">
+          <div class="success-icon">✓</div>
+          <h3>Registration Successful!</h3>
+          <p id="success-details"></p>
+          <button class="btn btn-primary" data-close-modal>Close</button>
+        </div>
+
+        <!-- Error Message (hidden initially) -->
+        <div id="error-message" class="error-message" style="display: none;" role="alert">
+          <div class="error-icon">⚠</div>
+          <h3>Registration Failed</h3>
+          <p id="error-details"></p>
+          <button class="btn btn-secondary" onclick="document.getElementById('error-message').style.display='none';document.getElementById('registration-form').style.display='block';">Try Again</button>
+        </div>
+      </div>
+    </div>
+
   </body>
   </html>
