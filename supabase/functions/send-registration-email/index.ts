@@ -5,7 +5,7 @@ import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 
 // Configuration
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
-const FROM_EMAIL = 'SHE IS AI Training <onboarding@resend.dev>' // Change after domain verification
+const FROM_EMAIL = 'SHE IS AI Training <ethics@sheisai.ai>'
 const WEBSITE_URL = 'https://sheisai.ai' // Update with your actual website URL
 
 // CORS headers for requests
