@@ -15,8 +15,8 @@
  */
 
 // Replace these with your actual Supabase credentials
-window.SUPABASE_URL = '';  // e.g., 'https://abcdefgh.supabase.co'
-window.SUPABASE_ANON_KEY = '';  // Your Supabase anon/public key
+window.SUPABASE_URL = 'https://jkrwoneaoowowxjovkol.supabase.co';  // e.g., 'https://abcdefgh.supabase.co'
+window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImprcndvbmVhb293b3d4am92a29sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5NzU3MjgsImV4cCI6MjA3ODU1MTcyOH0.6mYsAw_irzTL9sGosi2gRJw2qO11sqEceewpG3g9KEM';  // Your Supabase anon/public key
 
 /**
  * SETUP INSTRUCTIONS:
