@@ -401,12 +401,22 @@ async function submitRegistration(data, classType) {
       throw error;
     }
 
-    // Success
-    showSuccessMessage(data, classType);
+    // Success - send confirmation email
+    try {
+      await fetch(`${window.SUPABASE_URL}/functions/v1/send-registration-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${window.SUPABASE_ANON_KEY}`
+        },
+        body: JSON.stringify(data)
+      });
+    } catch (emailError) {
+      console.error('Email sending failed:', emailError);
+      // Don't block the success message if email fails
+    }
 
-    // TODO: Trigger email confirmation (requires backend endpoint or email service)
-    // For now, this would need to be set up separately with Supabase Edge Functions
-    // or a third-party email service like Resend or Postmark
+    showSuccessMessage(data, classType);
 
   } catch (error) {
     console.error('Registration error:', error);
