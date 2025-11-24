@@ -236,9 +236,14 @@ serve(async (req) => {
               ${additionalMessage}
 
               <!-- Calendar Reminder -->
-              <p style="margin: 24px 0 20px; font-size: 16px; line-height: 1.6; color: #333333;">
-                📅 <strong>Add to your calendar:</strong> We recommend adding this event to your personal calendar now so you don't forget!
-              </p>
+              <div style="margin: 24px 0; padding: 20px; background-color: #E8F5E9; border-left: 4px solid #4CAF50; border-radius: 8px;">
+                <p style="margin: 0 0 12px; font-size: 16px; line-height: 1.6; color: #1B5E20; font-weight: 600;">
+                  📅 Calendar Invitation Attached
+                </p>
+                <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #2E7D32;">
+                  This email includes a calendar file (<strong>SHE-IS-AI-Ethics-Training.ics</strong>) attachment. Click on it to automatically add this training to your calendar app (Google Calendar, Outlook, Apple Calendar, etc.).
+                </p>
+              </div>
 
               <!-- Meeting Link Info -->
               <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6; color: #333333;">
@@ -309,6 +314,46 @@ Website: ${WEBSITE_URL}
 Email: info@sheisai.ai
     `.trim()
 
+    // Generate .ics calendar file
+    const formatICSDate = (date: Date): string => {
+      return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z'
+    }
+
+    const classType = is4Hour ? '4-Hour Complete Session' : isPart1 ? 'Part 1 of 2' : 'Part 2 of 2'
+    const icsDescription = isPart1
+      ? 'IMPORTANT: This is Part 1 of a 2-part training. You must also attend Part 2 to complete certification.\\n\\nWe will send you the meeting link 24 hours before the session.\\n\\nWebsite: ' + WEBSITE_URL
+      : isPart2
+      ? 'Part 2 of the Ethics Training. If you have completed Part 1, this session completes your certification training.\\n\\nWe will send you the meeting link 24 hours before the session.\\n\\nWebsite: ' + WEBSITE_URL
+      : 'Complete 4-hour Ethics Training session covering everything needed for certification.\\n\\nWe will send you the meeting link 24 hours before the session.\\n\\nWebsite: ' + WEBSITE_URL
+
+    const icsContent = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//SHE IS AI//Ethics Training//EN',
+      'CALSCALE:GREGORIAN',
+      'METHOD:PUBLISH',
+      'BEGIN:VEVENT',
+      `UID:${session_id}-${email}@sheisai.ai`,
+      `DTSTAMP:${formatICSDate(new Date())}`,
+      `DTSTART:${formatICSDate(classDate)}`,
+      `DTEND:${formatICSDate(classEndDate)}`,
+      `SUMMARY:SHE IS AI Ethics Training - ${classType}`,
+      `DESCRIPTION:${icsDescription}`,
+      `LOCATION:Online (Meeting link will be sent 24 hours before)`,
+      'STATUS:CONFIRMED',
+      'SEQUENCE:0',
+      'BEGIN:VALARM',
+      'TRIGGER:-PT24H',
+      'ACTION:DISPLAY',
+      'DESCRIPTION:Reminder: SHE IS AI Ethics Training tomorrow',
+      'END:VALARM',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n')
+
+    // Base64 encode the .ics file for attachment
+    const icsBase64 = btoa(icsContent)
+
     // Send email via Resend API
     console.log('Sending email via Resend...')
 
@@ -324,6 +369,12 @@ Email: info@sheisai.ai
         subject: `Registration Confirmed - SHE IS AI Training on ${formattedDate}`,
         html: htmlContent,
         text: textContent,
+        attachments: [
+          {
+            filename: 'SHE-IS-AI-Ethics-Training.ics',
+            content: icsBase64,
+          }
+        ],
       }),
     })
 
