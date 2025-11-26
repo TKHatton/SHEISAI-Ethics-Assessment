@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+package-lock.json
+
+# Temporary files
+*.log
+*.tmp
+.temp/
+.cache/
+
+# Audit files
+audit-*.png
+audit-*.json
+audit-script.js
+audit-screenshots/
+current-site.png
+
+# Local config
+.claude/settings.local.json
+
+# OS files
+.DS_Store
+Thumbs.db
