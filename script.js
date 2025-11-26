@@ -529,6 +529,63 @@ function isValidEmail(email) {
   return re.test(email);
 }
 
+// Hamburger Menu Toggle
+function setupHamburgerMenu() {
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navMenu = document.getElementById('nav-menu');
+  const navClose = document.getElementById('nav-close');
+  const navOverlay = document.getElementById('nav-overlay');
+
+  function openMenu() {
+    navMenu.setAttribute('aria-hidden', 'false');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    hamburgerBtn.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    navMenu.setAttribute('aria-hidden', 'true');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    hamburgerBtn.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Open menu
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = navMenu.getAttribute('aria-hidden') === 'false';
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+  }
+
+  // Close menu button
+  if (navClose) {
+    navClose.addEventListener('click', closeMenu);
+  }
+
+  // Close on overlay click
+  if (navOverlay) {
+    navOverlay.addEventListener('click', closeMenu);
+  }
+
+  // Close on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.getAttribute('aria-hidden') === 'false') {
+      closeMenu();
+    }
+  });
+
+  // Close menu when clicking a link
+  const navLinks = document.querySelectorAll('.nav-menu__links a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setupAccordion();
   setupFocusVisible();
@@ -537,4 +594,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeSupabase();
   setupRegistrationModal();
   setupFormValidation();
+  setupHamburgerMenu();
 });

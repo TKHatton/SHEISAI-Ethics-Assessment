@@ -17,11 +17,32 @@
 
     <header class="header" role="banner">
       <div class="container header__content">
-        <a href="/" class="logo" aria-label="SHE IS AI - Return to homepage">
+        <a href="https://www.sheisai.ai" class="logo" aria-label="SHE IS AI - Return to homepage">
           <img src="assets/White Transparent Logo.png" alt="SHE IS AI logo" />
         </a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
     </header>
+
+    <!-- Navigation Menu Overlay -->
+    <nav id="nav-menu" class="nav-menu" aria-label="Main navigation" aria-hidden="true">
+      <div class="nav-menu__overlay" id="nav-overlay"></div>
+      <div class="nav-menu__content">
+        <button class="nav-menu__close" id="nav-close" aria-label="Close navigation menu">×</button>
+        <ul class="nav-menu__links">
+          <li><a href="https://www.sheisai.ai/team">ABOUT TEAM</a></li>
+          <li><a href="https://www.sheisai.ai/she-is-ai-community">COMMUNITY</a></li>
+          <li><a href="https://www.sheisai.ai/events-1">EVENTS</a></li>
+          <li><a href="https://www.sheisai.ai/magazine">MAGAZINE</a></li>
+          <li><a href="https://www.sheisai.ai/xpert-agency">AGENCY</a></li>
+          <li><a href="https://www.sheisai.ai/global-south">EDUCATION</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <main id="main">
       <!-- Section 1: Hero -->
@@ -534,7 +555,7 @@
       <footer class="footer" aria-labelledby="footer-heading">
         <div class="container">
           <div class="footer__logo">
-            <a href="/" aria-label="SHE IS AI - Return to homepage">
+            <a href="https://www.sheisai.ai" aria-label="SHE IS AI - Return to homepage">
               <img src="assets/White Transparent Logo.png" alt="SHE IS AI logo" />
             </a>
           </div>
