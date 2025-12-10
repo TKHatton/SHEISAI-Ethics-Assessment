@@ -6,7 +6,7 @@ import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 // Configuration
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
 const FROM_EMAIL = 'SHE IS AI Training <ethics@sheisai.ai>'
-const WEBSITE_URL = 'https://sheisai.ai' // Update with your actual website URL
+const WEBSITE_URL = 'https://ethics-training-registration.netlify.app/' // Update with your actual website URL
 
 // CORS headers for requests
 const corsHeaders = {
@@ -141,7 +141,7 @@ serve(async (req) => {
       `
     }
 
-    // Build HTML email
+    // Build HTML email - Matching the website confirmation page exactly
     const htmlContent = `
 <!DOCTYPE html>
 <html lang="en">
@@ -150,131 +150,119 @@ serve(async (req) => {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration Confirmed - SHE IS AI Training</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
-  <table role="presentation" style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;">
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #ffffff;">
+  <table role="presentation" style="width: 100%; border-collapse: collapse; background-color: #ffffff;">
     <tr>
-      <td align="center" style="padding: 40px 20px;">
-        <table role="presentation" style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <td align="center" style="padding: 80px 20px;">
+        <table role="presentation" style="max-width: 672px; width: 100%; background-color: #f9fafb; border-radius: 24px; border: 1px solid #f3f4f6; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
 
-          <!-- Header -->
+          <!-- Header with Icon -->
           <tr>
-            <td style="padding: 40px 40px 20px; text-align: center; background-color: #114E8E; border-radius: 8px 8px 0 0;">
-              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">
-                Registration Confirmed!
-              </h1>
-            </td>
-          </tr>
-
-          <!-- Content -->
-          <tr>
-            <td style="padding: 40px;">
-
-              <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6; color: #333333;">
-                Hi <strong>${full_name}</strong>,
-              </p>
-
-              <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6; color: #333333;">
-                You're registered for the <strong>SHE IS AI Ethics Training</strong>!
-              </p>
-
-              <!-- Class Details Box -->
-              <table role="presentation" style="width: 100%; border-collapse: collapse; background-color: #f8f9fa; border-radius: 8px; margin: 24px 0;">
+            <td style="padding: 48px 48px 32px;">
+              <table role="presentation" style="width: 100%; border-collapse: collapse;">
                 <tr>
-                  <td style="padding: 24px;">
-                    <h2 style="margin: 0 0 16px; font-size: 20px; font-weight: 600; color: #DD292F;">
-                      Your Class Details:
+                  <td style="vertical-align: top; width: 56px;">
+                    <div style="width: 48px; height: 48px; background-color: #ffe4e6; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </div>
+                  </td>
+                  <td style="padding-left: 16px; vertical-align: top;">
+                    <h2 style="margin: 0 0 4px; font-size: 24px; font-weight: 700; color: #111827; font-family: 'Georgia', serif;">
+                      Registration Confirmed
                     </h2>
-                    <table role="presentation" style="width: 100%;">
-                      <tr>
-                        <td style="padding: 8px 0;">
-                          <strong style="color: #333;">Date:</strong>
-                        </td>
-                        <td style="padding: 8px 0; color: #333;">
-                          ${formattedDate}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 8px 0;">
-                          <strong style="color: #333;">Time:</strong>
-                        </td>
-                        <td style="padding: 8px 0; color: #333;">
-                          ${formattedStartTime} – ${formattedEndTime} ${tzName}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 8px 0;">
-                          <strong style="color: #333;">Duration:</strong>
-                        </td>
-                        <td style="padding: 8px 0; color: #333;">
-                          ${duration}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 8px 0;">
-                          <strong style="color: #333;">Reference:</strong>
-                        </td>
-                        <td style="padding: 8px 0; color: #666; font-size: 14px;">
-                          ${estReference}
-                        </td>
-                      </tr>
-                      ${organization ? `
-                      <tr>
-                        <td style="padding: 8px 0;">
-                          <strong style="color: #333;">Organization:</strong>
-                        </td>
-                        <td style="padding: 8px 0; color: #333;">
-                          ${organization}
-                        </td>
-                      </tr>
-                      ` : ''}
-                    </table>
+                    <p style="margin: 0; font-size: 14px; color: #6b7280;">
+                      A confirmation email has been sent to ${email}
+                    </p>
                   </td>
                 </tr>
               </table>
-
-              <!-- Class Type Specific Message -->
-              ${additionalMessage}
-
-              <!-- Calendar Reminder -->
-              <div style="margin: 24px 0; padding: 20px; background-color: #E8F5E9; border-left: 4px solid #4CAF50; border-radius: 8px;">
-                <p style="margin: 0 0 12px; font-size: 16px; line-height: 1.6; color: #1B5E20; font-weight: 600;">
-                  📅 Calendar Invitation Attached
-                </p>
-                <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #2E7D32;">
-                  This email includes a calendar file (<strong>SHE-IS-AI-Ethics-Training.ics</strong>) attachment. Click on it to automatically add this training to your calendar app (Google Calendar, Outlook, Apple Calendar, etc.).
-                </p>
-              </div>
-
-              <!-- Meeting Link Info -->
-              <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6; color: #333333;">
-                We'll send you a reminder <strong>24 hours before your class</strong> with the meeting link and any materials you'll need.
-              </p>
-
-              <!-- Closing -->
-              <p style="margin: 24px 0 8px; font-size: 16px; line-height: 1.6; color: #333333;">
-                See you soon!
-              </p>
-              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #333333; font-weight: 600;">
-                The SHE IS AI Team
-              </p>
-
             </td>
           </tr>
 
-          <!-- Footer -->
+          <!-- Content Box -->
           <tr>
-            <td style="padding: 32px 40px; background-color: #f8f9fa; border-radius: 0 0 8px 8px; border-top: 1px solid #e0e0e0;">
-              <p style="margin: 0 0 8px; font-size: 14px; line-height: 1.6; color: #666666; text-align: center;">
-                <strong>SHE IS AI</strong> | Ethics Training
-              </p>
-              <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #666666; text-align: center;">
-                <a href="${WEBSITE_URL}" style="color: #114E8E; text-decoration: none;">sheisai.ai</a>
-                •
-                <a href="mailto:info@sheisai.ai" style="color: #114E8E; text-decoration: none;">info@sheisai.ai</a>
-              </p>
-              <p style="margin: 16px 0 0; font-size: 12px; line-height: 1.4; color: #999999; text-align: center;">
-                Ethics • Equity • Inclusion • Empowerment • Creative Innovation • Sustainability • Transparency • Accountability
-              </p>
+            <td style="padding: 0 48px 48px;">
+              <table role="presentation" style="width: 100%; background-color: #ffffff; border-radius: 16px; border: 1px solid #e5e7eb; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);">
+                <tr>
+                  <td style="padding: 32px;">
+
+                    <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.6; color: #1f2937; font-weight: 300;">
+                      Hi ${full_name},
+                    </p>
+
+                    <p style="margin: 0 0 24px; font-size: 16px; line-height: 1.6; color: #1f2937; font-weight: 300;">
+                      You're registered for the <strong style="font-weight: 600; color: #e11d48;">SHE IS AI Ethics Training!</strong>
+                    </p>
+
+                    <!-- Session Details -->
+                    <div style="background-color: #f9fafb; padding: 24px; border-radius: 12px; border: 1px solid #f3f4f6; margin-bottom: 24px;">
+                      <h3 style="margin: 0 0 16px; font-size: 12px; font-weight: 700; color: #111827; text-transform: uppercase; letter-spacing: 0.05em;">
+                        Your Training Session Details
+                      </h3>
+
+                      <div style="margin-bottom: 16px;">
+                        <p style="margin: 0 0 4px; font-size: 12px; font-weight: 700; color: #6b7280;">
+                          ${is4Hour ? 'Intensive Session' : isPart1 ? 'Part 1' : 'Part 2'}
+                        </p>
+                        <p style="margin: 0; font-size: 18px; font-weight: 500; color: #111827;">
+                          ${formattedDate}
+                        </p>
+                        <p style="margin: 4px 0 0; font-size: 18px; font-weight: 500; color: #111827;">
+                          ${formattedStartTime} – ${formattedEndTime} ${tzName}
+                        </p>
+                      </div>
+
+                      <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #e5e7eb;">
+                        <p style="margin: 0; font-size: 14px; color: #4b5563;">
+                          <strong style="font-weight: 600;">Duration:</strong> ${duration}
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Class Type Specific Message -->
+                    ${additionalMessage}
+
+                    <p style="margin: 0 0 24px; font-size: 16px; line-height: 1.6; color: #1f2937; font-weight: 300;">
+                      This complete training session covers everything you need for certification.
+                    </p>
+
+                    <!-- Calendar Info -->
+                    <div style="margin-bottom: 24px;">
+                      <h4 style="margin: 0 0 8px; font-size: 16px; font-weight: 700; color: #111827;">
+                        Calendar Invitation Attached
+                      </h4>
+                      <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #4b5563;">
+                        This email includes a calendar file (SHE-IS-AI-Ethics-Training.ics) attachment. Click on it to automatically add this training to your calendar app (Google Calendar, Outlook, Apple Calendar, etc.).
+                      </p>
+                    </div>
+
+                    <!-- Zoom Button -->
+                    <div style="margin-bottom: 32px;">
+                      <a href="https://us02web.zoom.us/j/82821002196?pwd=tAp9f2hM6BfqGUUdqTBIsLBimY8RSY.1"
+                         style="display: inline-flex; align-items: center; padding: 12px 24px; background-color: #2563eb; color: #ffffff; font-weight: 700; border-radius: 9999px; text-decoration: none; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                          <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                          <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        Join via Zoom
+                      </a>
+                    </div>
+
+                    <p style="margin: 0 0 16px; font-size: 14px; line-height: 1.6; color: #6b7280;">
+                      We'll send you a reminder 24 hours before your class with the meeting link and any materials you'll need.
+                    </p>
+
+                    <!-- Closing -->
+                    <p style="margin: 16px 0 0; font-size: 14px; line-height: 1.6; color: #6b7280;">
+                      See you soon!<br>
+                      <strong style="color: #111827;">The SHE IS AI Team</strong>
+                    </p>
+
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
 

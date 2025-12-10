@@ -1,26 +1,27 @@
-# Node modules
-node_modules/
-package-lock.json
-
-# Temporary files
+# Logs
+logs
 *.log
-*.tmp
-.temp/
-.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Audit files
-audit-*.png
-audit-*.json
-audit-script.js
-audit-screenshots/
-current-site.png
+node_modules
+dist
+dist-ssr
+*.local
 
-# Local config
-.claude/settings.local.json
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Playwright MCP screenshots
+# Playwright screenshots (not needed in production)
 .playwright-mcp/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
