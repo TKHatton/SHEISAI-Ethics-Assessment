@@ -68,7 +68,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Wayne Morgan",
     role: "President",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "/assets/team/headshot_wayne.jpeg",
+    image: "/assets/team/headshot_wayne.jpeg", // Matches screenshot (lowercase w, .jpeg)
     linkedin: "",
     instagram: "",
     email: "wayne@sheisai.ai"
@@ -86,7 +86,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Lyudmyla Dickinson",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "/assets/team/headshot_lyudmyla.png", 
+    image: "/assets/team/headshot_lyudmyla.png", // Matches screenshot (.png)
     linkedin: "",
     instagram: "",
     email: ""
@@ -131,7 +131,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Hayat Ibrahim",
     role: "Team Member",
     bio: "I ensure that AI systems are built and used responsibly, transparently, and with real people in mind. My role focuses on making sure every tool we create is safe, fair, accessible, and aligned with our values especially for underrepresented communities and small businesses.",
-    image: "/assets/team/headshot_hayat.jpg",
+    image: "/assets/team/headshot_hayat.jpg", // Matches screenshot (.jpg)
     linkedin: "https://www.linkedin.com/in/hayuni3/",
     instagram: "https://www.instagram.com/hayuni3/",
     email: "hayusnn@gmail.com"
@@ -160,16 +160,17 @@ export const Team: React.FC = () => {
               transition={{ delay: idx * 0.1 }}
               className="group"
             >
-              <div className="relative mb-6 overflow-hidden rounded-2xl aspect-[3/4]">
+              <div className="relative mb-6 overflow-hidden rounded-2xl aspect-[3/4] bg-gray-100">
                 {/* 
                    --- EFFECT 1: THE ROSE TINT MASK ---
                    bg-rose-900/10: This adds the red tint.
                    group-hover:bg-rose-900/0: This removes the tint when you hover.
+                   pointer-events-none: Ensures clicks pass through to the image/links.
                 */}
-                <div className="absolute inset-0 bg-rose-900/10 group-hover:bg-rose-900/0 transition-colors z-10"></div>
+                <div className="absolute inset-0 bg-rose-900/10 group-hover:bg-rose-900/0 transition-colors z-10 pointer-events-none"></div>
                 
                 <img 
-                  src={member.image} 
+                  src={`${member.image}?v=2`} 
                   alt={member.name}
                   /* 
                      --- EFFECT 2 & 3: GRAYSCALE & ZOOM ---
@@ -180,9 +181,9 @@ export const Team: React.FC = () => {
                   */
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
                   onError={(e) => {
-                    console.error(`Missing image for ${member.name}. Tried loading: ${member.image}`);
-                    // Fallback in case local image fails
-                    e.currentTarget.src = `https://images.unsplash.com/photo-${1580489944761 + idx}-15a19d654956?q=80&w=1000&auto=format&fit=crop`;
+                    console.error(`IMAGE LOAD ERROR for ${member.name}. Path tried: ${member.image}`);
+                    // DEBUG: If you see the text "IMAGE NOT FOUND" in a gray box, the file path is definitely wrong or file is missing.
+                    e.currentTarget.src = `https://placehold.co/400x600/e2e8f0/ef4444?text=IMAGE+NOT+FOUND`;
                   }}
                 />
                 
