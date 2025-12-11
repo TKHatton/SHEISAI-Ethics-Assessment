@@ -14,12 +14,16 @@ interface TeamMember {
   email?: string;     // Optional: Paste Email Address
 }
 
+// --- HOW TO ADD NEW PEOPLE ---
+// 1. Add a new object to this list below.
+// 2. Ensure the image file exists in your "public/assets/team/" folder.
+// 3. The code lower down will automatically apply the effects to everyone in this list.
 const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Ricquel Harper",
     role: "Director of Education, Ethics & Governance",
     bio: "Leading our educational initiatives and ensuring our ethical frameworks are integrated into every aspect of our governance and curriculum to empower the next generation of AI leaders.",
-    image: "assets/team/headshot_ricquel.jpeg",
+    image: "/assets/team/headshot_ricquel.jpeg",
     linkedin: "",  // PASTE LINK HERE
     instagram: "", // PASTE LINK HERE
     email: ""      // PASTE EMAIL HERE
@@ -28,7 +32,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Amanda Jeffs",
     role: "Founder | CEO, Operations and Marketing",
     bio: "The visionary behind SHE IS AI, driving our mission to position one million women as leading AI experts through strategic operations, global marketing, and unwavering advocacy.",
-    image: "assets/team/headshot_amanda.jpeg",
+    image: "/assets/team/headshot_amanda.jpeg",
     linkedin: "",
     instagram: "",
     email: ""
@@ -37,7 +41,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "El Wong",
     role: "Regional Lead Canada",
     bio: "Spearheading our Canadian initiatives and building strong community partnerships to expand our impact, ensuring local voices are central to our global dialogue.",
-    image: "assets/team/headshot_el.jpeg",
+    image: "/assets/team/headshot_el.jpeg",
     linkedin: "",
     instagram: "",
     email: ""
@@ -46,7 +50,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Anja Lee",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "assets/team/headshot_anja.jpeg",
+    image: "/assets/team/headshot_anja.jpeg",
     linkedin: "",
     instagram: "",
     email: ""
@@ -55,7 +59,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Dawn Kristy",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "assets/team/headshot_dawn.jpeg",
+    image: "/assets/team/headshot_dawn.jpeg",
     linkedin: "",
     instagram: "",
     email: ""
@@ -64,7 +68,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Wayne Morgan",
     role: "President",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "assets/team/headshot_Wayne.jpeg",
+    image: "/assets/team/headshot_wayne.jpeg",
     linkedin: "",
     instagram: "",
     email: "wayne@sheisai.ai"
@@ -73,7 +77,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Nagawa Lule",
     role: "Vice President",
     bio: "Overseeing strategic growth and operational excellence, ensuring our global initiatives align with our core mission of empowerment, inclusion, and ethical innovation.",
-    image: "assets/team/headshot_nagawa.jpeg",
+    image: "/assets/team/headshot_nagawa.jpeg",
     linkedin: "",
     instagram: "",
     email: ""
@@ -82,7 +86,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Lyudmyla Dickinson",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "assets/team/headshot_lyudmyla.jpeg",
+    image: "/assets/team/headshot_lyudmyla.png", 
     linkedin: "",
     instagram: "",
     email: ""
@@ -91,7 +95,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Julia Lewis",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "assets/team/headshot_julia.jpeg",
+    image: "/assets/team/headshot_julia.jpeg",
     linkedin: "",
     instagram: "",
     email: ""
@@ -100,7 +104,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Jamie Johnson",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "assets/team/headshot_jamie.jpeg",
+    image: "/assets/team/headshot_jamie.jpeg",
     linkedin: "",
     instagram: "",
     email: ""
@@ -109,7 +113,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Lexi Gibert",
     role: "Team Member",
     bio: "AI Ethics Advisory Council Member",
-    image: "assets/team/headshot_lexi.jpeg",
+    image: "/assets/team/headshot_lexi.jpeg",
     linkedin: "http://www.linkedin.com/in/lllexigilbert",
     instagram: "",
     email: "lexi@optimizher.global"
@@ -118,7 +122,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Mo Hafez",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "assets/team/headshot_mo.jpeg",
+    image: "/assets/team/headshot_mo.jpeg",
     linkedin: "",
     instagram: "",
     email: ""
@@ -127,7 +131,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Hayat Ibrahim",
     role: "Team Member",
     bio: "I ensure that AI systems are built and used responsibly, transparently, and with real people in mind. My role focuses on making sure every tool we create is safe, fair, accessible, and aligned with our values especially for underrepresented communities and small businesses.",
-    image: "assets/team/headshot_hayat.jpg",
+    image: "/assets/team/headshot_hayat.jpg",
     linkedin: "https://www.linkedin.com/in/hayuni3/",
     instagram: "https://www.instagram.com/hayuni3/",
     email: "hayusnn@gmail.com"
@@ -157,12 +161,26 @@ export const Team: React.FC = () => {
               className="group"
             >
               <div className="relative mb-6 overflow-hidden rounded-2xl aspect-[3/4]">
+                {/* 
+                   --- EFFECT 1: THE ROSE TINT MASK ---
+                   bg-rose-900/10: This adds the red tint.
+                   group-hover:bg-rose-900/0: This removes the tint when you hover.
+                */}
                 <div className="absolute inset-0 bg-rose-900/10 group-hover:bg-rose-900/0 transition-colors z-10"></div>
+                
                 <img 
                   src={member.image} 
                   alt={member.name}
+                  /* 
+                     --- EFFECT 2 & 3: GRAYSCALE & ZOOM ---
+                     grayscale: Starts Black & White.
+                     group-hover:grayscale-0: Turns to Color on hover.
+                     group-hover:scale-105: Zooms in 5% on hover.
+                     duration-500: Takes 0.5s to animate smoothly.
+                  */
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
                   onError={(e) => {
+                    console.error(`Missing image for ${member.name}. Tried loading: ${member.image}`);
                     // Fallback in case local image fails
                     e.currentTarget.src = `https://images.unsplash.com/photo-${1580489944761 + idx}-15a19d654956?q=80&w=1000&auto=format&fit=crop`;
                   }}
