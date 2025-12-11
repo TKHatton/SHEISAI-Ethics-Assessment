@@ -123,8 +123,9 @@ const TEAM_MEMBERS: TeamMember[] = [
     role: "Team Member",
     bio: "An Ethical Technologist, CEO of ByteWise LLC, and adjunct faculty at Johns Hopkins University, teaching AI and preparing the next generation of technology leaders. With more than 17 years of experience in AI strategy, cybersecurity, and digital transformation, he helps organizations navigate responsible innovation and adopt technology aligned with human values. As the host of the Beyond the Byte podcast, Mr. Hafez sparks global dialogue on AI, ethics, and society’s technological future. His work is dedicated to advancing accountable, human-centered technology while educating and inspiring the next generation of leaders.",
     image: "/assets/team/headshot_mo.jpg",
-    linkedin: "",
-    instagram: "",
+    linkedin: "http://www.linkedin.com/in/hafezm",
+    instagram: "https://www.instagram.com/beyond.the.byte/",
+    youtube: "https://www.youtube.com/@BeyondtheBytePodcast",
     email: "mo@bytewise-llc.com"
   },
   {
