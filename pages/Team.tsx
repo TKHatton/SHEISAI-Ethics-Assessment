@@ -1,74 +1,136 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter, Mail } from 'lucide-react';
+import { Linkedin, Mail, Instagram } from 'lucide-react';
 
-const TEAM_MEMBERS = [
+// This interface defines what info a team member can have
+interface TeamMember {
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+  linkedin?: string;  // Optional: Paste LinkedIn URL
+  instagram?: string; // Optional: Paste Instagram URL
+  email?: string;     // Optional: Paste Email Address
+}
+
+const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Ricquel Harper",
     role: "Director of Education, Ethics & Governance",
     bio: "Leading our educational initiatives and ensuring our ethical frameworks are integrated into every aspect of our governance and curriculum to empower the next generation of AI leaders.",
-    image: "assets/team/headshot_ricquel.jpeg"
+    image: "assets/team/headshot_ricquel.jpeg",
+    linkedin: "",  // PASTE LINK HERE
+    instagram: "", // PASTE LINK HERE
+    email: ""      // PASTE EMAIL HERE
   },
   {
     name: "Amanda Jeffs",
     role: "Founder | CEO, Operations and Marketing",
     bio: "The visionary behind SHE IS AI, driving our mission to position one million women as leading AI experts through strategic operations, global marketing, and unwavering advocacy.",
-    image: "assets/team/headshot_amanda.jpeg"
+    image: "assets/team/headshot_amanda.jpeg",
+    linkedin: "",
+    instagram: "",
+    email: ""
   },
   {
     name: "El Wong",
     role: "Regional Lead Canada",
     bio: "Spearheading our Canadian initiatives and building strong community partnerships to expand our impact, ensuring local voices are central to our global dialogue.",
-    image: "assets/team/headshot_el.jpeg"
+    image: "assets/team/headshot_el.jpeg",
+    linkedin: "",
+    instagram: "",
+    email: ""
   },
   {
     name: "Anja Lee",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "assets/team/headshot_anja.jpeg"
+    image: "assets/team/headshot_anja.jpeg",
+    linkedin: "",
+    instagram: "",
+    email: ""
   },
   {
     name: "Dawn Kristy",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "assets/team/headshot_dawn.jpeg"
+    image: "assets/team/headshot_dawn.jpeg",
+    linkedin: "",
+    instagram: "",
+    email: ""
+  },
+  {
+    name: "Wayne Morgan",
+    role: "President",
+    bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
+    image: "assets/team/headshot_Wayne.jpeg",
+    linkedin: "",
+    instagram: "",
+    email: "wayne@sheisai.ai"
   },
   {
     name: "Nagawa Lule",
     role: "Vice President",
     bio: "Overseeing strategic growth and operational excellence, ensuring our global initiatives align with our core mission of empowerment, inclusion, and ethical innovation.",
-    image: "assets/team/headshot_nagawa.jpeg"
+    image: "assets/team/headshot_nagawa.jpeg",
+    linkedin: "",
+    instagram: "",
+    email: ""
   },
   {
     name: "Lyudmyla Dickinson",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "assets/team/headshot_lyudmyla.jpeg"
+    image: "assets/team/headshot_lyudmyla.jpeg",
+    linkedin: "",
+    instagram: "",
+    email: ""
   },
   {
     name: "Julia Lewis",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "assets/team/headshot_julia.jpeg"
+    image: "assets/team/headshot_julia.jpeg",
+    linkedin: "",
+    instagram: "",
+    email: ""
   },
   {
     name: "Jamie Johnson",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "assets/team/headshot_jamie.jpeg"
+    image: "assets/team/headshot_jamie.jpeg",
+    linkedin: "",
+    instagram: "",
+    email: ""
   },
   {
     name: "Lexi Gibert",
     role: "Team Member",
-    bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "assets/team/headshot_lexi.jpeg"
+    bio: "AI Ethics Advisory Council Member",
+    image: "assets/team/headshot_lexi.jpeg",
+    linkedin: "http://www.linkedin.com/in/lllexigilbert",
+    instagram: "",
+    email: "lexi@optimizher.global"
   },
   {
     name: "Mo Hafez",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "assets/team/headshot_mo.jpeg"
+    image: "assets/team/headshot_mo.jpeg",
+    linkedin: "",
+    instagram: "",
+    email: ""
+  },
+  {
+    name: "Hayat Ibrahim",
+    role: "Team Member",
+    bio: "I ensure that AI systems are built and used responsibly, transparently, and with real people in mind. My role focuses on making sure every tool we create is safe, fair, accessible, and aligned with our values especially for underrepresented communities and small businesses.",
+    image: "assets/team/headshot_hayat.jpg",
+    linkedin: "https://www.linkedin.com/in/hayuni3/",
+    instagram: "https://www.instagram.com/hayuni3/",
+    email: "hayusnn@gmail.com"
   }
 ];
 
@@ -101,14 +163,36 @@ export const Team: React.FC = () => {
                   alt={member.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
                   onError={(e) => {
+                    // Fallback in case local image fails
                     e.currentTarget.src = `https://images.unsplash.com/photo-${1580489944761 + idx}-15a19d654956?q=80&w=1000&auto=format&fit=crop`;
                   }}
                 />
+                
+                {/* Social Icons Overlay - Only renders if data exists */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
                   <div className="flex gap-4 justify-center text-white">
-                    <Linkedin className="w-5 h-5 cursor-pointer hover:text-rose-400" strokeWidth={1.5} />
-                    <Twitter className="w-5 h-5 cursor-pointer hover:text-rose-400" strokeWidth={1.5} />
-                    <Mail className="w-5 h-5 cursor-pointer hover:text-rose-400" strokeWidth={1.5} />
+                    
+                    {/* LinkedIn */}
+                    {member.linkedin && (
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${member.name}'s LinkedIn`}>
+                        <Linkedin className="w-5 h-5 cursor-pointer hover:text-rose-400 transition-colors" strokeWidth={1.5} />
+                      </a>
+                    )}
+
+                    {/* Instagram */}
+                    {member.instagram && (
+                      <a href={member.instagram} target="_blank" rel="noopener noreferrer" aria-label={`${member.name}'s Instagram`}>
+                        <Instagram className="w-5 h-5 cursor-pointer hover:text-rose-400 transition-colors" strokeWidth={1.5} />
+                      </a>
+                    )}
+
+                    {/* Email */}
+                    {member.email && (
+                      <a href={`mailto:${member.email}`} aria-label={`Email ${member.name}`}>
+                        <Mail className="w-5 h-5 cursor-pointer hover:text-rose-400 transition-colors" strokeWidth={1.5} />
+                      </a>
+                    )}
+
                   </div>
                 </div>
               </div>
