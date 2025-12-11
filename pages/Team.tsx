@@ -112,20 +112,20 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Lexi Gibert",
     role: "Team Member",
-    bio: "AI Ethics Advisory Council Member",
+    bio: "As part of the AI Ethics & Education Advisory Council, I contribute to SHE IS AI’s ethical vision, educational design, and community initiatives. I create and facilitate ethics-centered courses and support programs that honor culture, inclusivity, and human-first leadership across our global movement. My work reinforces our shared commitment to responsible, culturally aware AI adoption.",
     image: "/assets/team/headshot_lexi.jpeg",
-    linkedin: "http://www.linkedin.com/in/lllexigilbert",
+    linkedin: "https://www.linkedin.com/in/optimizher/",
     instagram: "",
     email: "lexi@optimizher.global"
   },
   {
     name: "Mo Hafez",
     role: "Team Member",
-    bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "/assets/team/headshot_mo.jpeg",
+    bio: "An Ethical Technologist, CEO of ByteWise LLC, and adjunct faculty at Johns Hopkins University, teaching AI and preparing the next generation of technology leaders. With more than 17 years of experience in AI strategy, cybersecurity, and digital transformation, he helps organizations navigate responsible innovation and adopt technology aligned with human values. As the host of the Beyond the Byte podcast, Mr. Hafez sparks global dialogue on AI, ethics, and society’s technological future. His work is dedicated to advancing accountable, human-centered technology while educating and inspiring the next generation of leaders.",
+    image: "/assets/team/headshot_mo.jpg",
     linkedin: "",
     instagram: "",
-    email: ""
+    email: "mo@bytewise-llc.com"
   },
   {
     name: "Hayat Ibrahim",
