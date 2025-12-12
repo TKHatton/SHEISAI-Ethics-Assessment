@@ -134,7 +134,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Lexi Gilbert",
     role: "Team Member",
     bio: "As part of the AI Ethics & Education Advisory Council, I contribute to SHE IS AI’s ethical vision, educational design, and community initiatives. I create and facilitate ethics-centered courses and support programs that honor culture, inclusivity, and human-first leadership across our global movement. My work reinforces our shared commitment to responsible, culturally aware AI adoption.",
-    image: "/assets/team/headshot_lexi.jpg",
+    image: "/assets/team/headshot_lexi2.jpg",
     linkedin: "http://www.linkedin.com/in/lexigilbert",
     instagram: "",
     youtube: "",
