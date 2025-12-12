@@ -123,7 +123,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Jamie Johnson",
     role: "Team Member",
     bio: "Jamie is a brand designer, educator, and AI practitioner with over 25 years of experience supporting people through learning, change, and creative growth. Her work centers on helping individuals and organizations approach AI with clarity, confidence, and care—especially at the beginning stages, where fear, resistance, or uncertainty are common.  As part of the AI Ethics & Education Advisory Council, Jamie contributes to SHE IS AI’s mission by helping shape education, dialogue, and support systems that prioritize ethical, inclusive, and human-first AI use. Her work focuses on demystifying emerging technology, fostering trust, and ensuring people feel supported and empowered as they adapt to evolving tools and ways of working.",
-    image: "/assets/team/headshot_jamie.jpeg",
+    image: "/assets/team/"headshot_jamie.jpeg",
     linkedin: "https://www.linkedin.com/in/jamienikoledesign/",
     instagram: "",
     youtube: "",
