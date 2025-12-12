@@ -68,7 +68,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Wayne Morgan",
     role: "President",
-    bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
+    bio: "As President of SHE IS AI, Wayne Morgan is committed to fostering a more inclusive, culturally diverse, and ethically driven future—both in the development of people and in the evolution of responsible, values-based business. He leads SHE IS AI’s international relations and strategic partnerships, drawing on decades of global experience to build bridges between technology, humanity, and culture. Wayne brings a grounded, people-first mindset to the advancement of ethical AI and sustainable leadership.",
     image: "/assets/team/headshot_wayne.jpg", // Matches screenshot (lowercase w, .jpeg)
     linkedin: "",
     instagram: "",
