@@ -163,11 +163,10 @@ export const Team: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-24">
           <h1 className="text-5xl font-bold text-gray-900 mb-6 font-serif">Meet the Ethics Team</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all">
+          <p className="text-gray-500 text-sm leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all">
             {member.bio}
-            We are a collective of visionaries, defenders of dignity, and architects of the future. 
-            The women behind the manual are dedicated to ensuring AI serves all of humanity.
           </p>
+
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
