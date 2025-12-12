@@ -14,7 +14,9 @@ interface TeamMember {
   instagram2?: string;// Optional: Paste Instagram URL
   youtube?: string; 
   substack?: string;
-  tiktok?: string;  // Optional: Paste YouTube URL
+  tiktok?: string;
+  facebook?: string;
+  website?: string // Optional: Paste YouTube URL
   email?: string;     // Optional: Paste Email Address
 }
 
@@ -60,12 +62,12 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Anja Lee",
     role: "Team Member",
-    bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
+    bio: "Anja serves on the She Is AI Advisory Council and as an Ambassador, supporting the organization’s work at the intersection of AI education, governance, and real-world adoption. Her focus is practical responsibility: building AI literacy that improves decision-making, reduces harm, and broadens who gets to shape what “good AI” looks like. She collaborates with the community to turn complex AI ideas into clear frameworks, usable tools, and scalable learning.",
     image: "/assets/team/headshot_anja.jpeg",
-    linkedin: "",
+    linkedin: "http://www.linkedin.com/in/anjalee",
     instagram: "",
     youtube: "",
-    email: ""
+    email: "anja.lee@gmail.com"
   },
   {
     name: "Dawn Kristy",
@@ -120,21 +122,23 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Jamie Johnson",
     role: "Team Member",
-    bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
+    bio: "Jamie is a brand designer, educator, and AI practitioner with over 25 years of experience supporting people through learning, change, and creative growth. Her work centers on helping individuals and organizations approach AI with clarity, confidence, and care—especially at the beginning stages, where fear, resistance, or uncertainty are common.  As part of the AI Ethics & Education Advisory Council, Jamie contributes to SHE IS AI’s mission by helping shape education, dialogue, and support systems that prioritize ethical, inclusive, and human-first AI use. Her work focuses on demystifying emerging technology, fostering trust, and ensuring people feel supported and empowered as they adapt to evolving tools and ways of working.",
     image: "/assets/team/headshot_jamie.jpeg",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/jamienikoledesign/",
     instagram: "",
     youtube: "",
-    email: ""
+    website: "https://www.jamienikole.com",
+    email: "Hello@jamienikole.com"
   },
   {
-    name: "Lexi Gibert",
+    name: "Lexi Gilbert",
     role: "Team Member",
     bio: "As part of the AI Ethics & Education Advisory Council, I contribute to SHE IS AI’s ethical vision, educational design, and community initiatives. I create and facilitate ethics-centered courses and support programs that honor culture, inclusivity, and human-first leadership across our global movement. My work reinforces our shared commitment to responsible, culturally aware AI adoption.",
     image: "/assets/team/headshot_lexi.jpg",
     linkedin: "http://www.linkedin.com/in/lexigilbert",
     instagram: "",
     youtube: "",
+    facebook: "https://www.facebook.com/lllexiG",
     email: "lexi@optimizher.global"
   },
   {
