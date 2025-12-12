@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Mail, Instagram } from 'lucide-react';
+import { Linkedin, Mail, Instagram, Youtube } from 'lucide-react';
 
 // This interface defines what info a team member can have
 interface TeamMember {
@@ -11,35 +11,36 @@ interface TeamMember {
   image: string;
   linkedin?: string;  // Optional: Paste LinkedIn URL
   instagram?: string; // Optional: Paste Instagram URL
-  instagram2?: string;
-  youtube?: string;
-  substack?: string;
+  youtube?: string;   // Optional: Paste YouTube URL
   email?: string;     // Optional: Paste Email Address
 }
 
 // --- HOW TO ADD NEW PEOPLE ---
 // 1. Add a new object to this list below.
 // 2. Ensure the image file exists in your "public/assets/team/" folder.
-// 3. The code lower down will automatically apply the effects to everyone in this list.
+// 3. To add LINE BREAKS in the bio:
+//    - Use `\n\n` inside the text for a new paragraph.
+//    - OR change the double quotes " to backticks ` and just press Enter.
 const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Ricquel Harper",
     role: "Director of Education, Ethics & Governance",
-    bio: "As the Director of Education, Ethics and Governance, Ricquel helps guide the ethical frameworks and policy strategies that shape our global work. The focus is on responsible AI development, expanding representation across the AI lifecycle, and ensuring underrepresented communities remain centered. Working collaboratively with partners and contributors, the team supports ethical governance across international initiatives and advances standards for ethical, accountable AI.",
+    bio: "Leading our educational initiatives and ensuring our ethical frameworks are integrated into every aspect of our governance and curriculum to empower the next generation of AI leaders.",
     image: "/assets/team/headshot_ricquel.jpeg",
-    linkedin: "https://www.linkedin.com/in/ricquelharper/",  // PASTE LINK HERE
+    linkedin: "",  // PASTE LINK HERE
     instagram: "", // PASTE LINK HERE
-    email: "ricquel@sheisai.ai"      // PASTE EMAIL HERE
+    youtube: "",   // PASTE LINK HERE
+    email: ""      // PASTE EMAIL HERE
   },
   {
     name: "Amanda Jeffs",
-    role: "Founder | CEO",
-    bio: "As Founder and CEO of SHE IS AI and creator of the AI Advisory Council, Amanda leads with a deep commitment to human-led, ethical, and inclusive AI. Her work centers on ensuring that no voice is left behind as AI reshapes economies, cultures, and opportunity worldwide. With a background in marketing, business, community, coaching, and mentoring university students, she brings together a global collective of experts to guide responsible AI adoption, amplify diverse perspectives, and translate ethics into practical strategy. Through the SHE IS AI community and ecosystem, Amanda supports individuals and organisations to navigate the AI landscape safely, ethically, and with clarity, bridging innovation, integrity, and real-world impact.",
-    image: "/assets/team/headshot_amanda.jpg",
-    linkedin: "https://www.linkedin.com/in/amandajeffs",
-    instagram: "https://www.instagram.com/amandajeffsnz",
-    substack: "https://amandajeffsnz.substack.com/",
-    email: "amanda@sheisai.ai"
+    role: "Founder | CEO, Operations and Marketing",
+    bio: "The visionary behind SHE IS AI, driving our mission to position one million women as leading AI experts through strategic operations, global marketing, and unwavering advocacy.",
+    image: "/assets/team/headshot_amanda.jpeg",
+    linkedin: "",
+    instagram: "",
+    youtube: "",
+    email: ""
   },
   {
     name: "El Wong",
@@ -48,6 +49,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     image: "/assets/team/headshot_el.jpeg",
     linkedin: "",
     instagram: "",
+    youtube: "",
     email: ""
   },
   {
@@ -57,6 +59,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     image: "/assets/team/headshot_anja.jpeg",
     linkedin: "",
     instagram: "",
+    youtube: "",
     email: ""
   },
   {
@@ -66,15 +69,17 @@ const TEAM_MEMBERS: TeamMember[] = [
     image: "/assets/team/headshot_dawn.jpeg",
     linkedin: "",
     instagram: "",
+    youtube: "",
     email: ""
   },
   {
     name: "Wayne Morgan",
     role: "President",
-    bio: "As President of SHE IS AI, Wayne Morgan is committed to fostering a more inclusive, culturally diverse, and ethically driven future—both in the development of people and in the evolution of responsible, values-based business. He leads SHE IS AI’s international relations and strategic partnerships, drawing on decades of global experience to build bridges between technology, humanity, and culture. Wayne brings a grounded, people-first mindset to the advancement of ethical AI and sustainable leadership.",
-    image: "/assets/team/headshot_wayne.jpg", // Matches screenshot (lowercase w, .jpeg)
+    bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
+    image: "/assets/team/headshot_wayne.jpeg", // Matches screenshot (lowercase w, .jpeg)
     linkedin: "",
     instagram: "",
+    youtube: "",
     email: "wayne@sheisai.ai"
   },
   {
@@ -84,25 +89,28 @@ const TEAM_MEMBERS: TeamMember[] = [
     image: "/assets/team/headshot_nagawa.jpeg",
     linkedin: "",
     instagram: "",
-    email: "nagawa@sheisai.ai"
+    youtube: "",
+    email: ""
   },
   {
     name: "Lyudmyla Dickinson",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
     image: "/assets/team/headshot_lyudmyla.png", // Matches screenshot (.png)
-    linkedin: "https://www.linkedin.com/in/lyudmyla-dickinson-457328331/",
+    linkedin: "",
     instagram: "",
-    email: "lyunix13@gmail.com"
+    youtube: "",
+    email: ""
   },
   {
     name: "Julia Lewis",
-    role: "Advisory Council Member & Queensland Regional Lead",
+    role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
     image: "/assets/team/headshot_julia.jpeg",
-    linkedin: "https://www.linkedin.com/in/julia-lewis-genai/",
+    linkedin: "",
     instagram: "",
-    email: "julia@margaritamedia.com.au"
+    youtube: "",
+    email: ""
   },
   {
     name: "Jamie Johnson",
@@ -111,50 +119,39 @@ const TEAM_MEMBERS: TeamMember[] = [
     image: "/assets/team/headshot_jamie.jpeg",
     linkedin: "",
     instagram: "",
+    youtube: "",
     email: ""
   },
   {
     name: "Lexi Gibert",
     role: "Team Member",
-    bio: "As part of the AI Ethics & Education Advisory Council, I contribute to SHE IS AI’s ethical vision, educational design, and community initiatives. I create and facilitate ethics-centered courses and support programs that honor culture, inclusivity, and human-first leadership across our global movement. My work reinforces our shared commitment to responsible, culturally aware AI adoption.",
-    image: "/assets/team/headshot_lexi.jpg",
-    linkedin: "https://www.linkedin.com/in/optimizher/",
+    bio: "AI Ethics Advisory Council Member",
+    image: "/assets/team/headshot_lexi.jpeg",
+    linkedin: "http://www.linkedin.com/in/lllexigilbert",
     instagram: "",
+    youtube: "",
     email: "lexi@optimizher.global"
   },
   {
-    name: "Mohamed Hafez",
+    name: "Mo Hafez",
     role: "Team Member",
-    bio: "An Ethical Technologist, CEO of ByteWise LLC, and adjunct faculty at Johns Hopkins University, teaching AI and preparing the next generation of technology leaders. With more than 17 years of experience in AI strategy, cybersecurity, and digital transformation, he helps organizations navigate responsible innovation and adopt technology aligned with human values. As the host of the Beyond the Byte podcast, Mr. Hafez sparks global dialogue on AI, ethics, and society’s technological future. His work is dedicated to advancing accountable, human-centered technology while educating and inspiring the next generation of leaders.",
-    image: "/assets/team/headshot_mo.jpg",
-    linkedin: "http://www.linkedin.com/in/hafezm",
-    instagram: "https://www.instagram.com/beyond.the.byte/",
-    youtube: "https://www.youtube.com/@BeyondtheBytePodcast",
-    email: "mo@bytewise-llc.com"
+    bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
+    image: "/assets/team/headshot_mo.jpeg",
+    linkedin: "",
+    instagram: "",
+    youtube: "",
+    email: ""
   },
   {
     name: "Hayat Ibrahim",
     role: "Team Member",
-    bio: "An AI Consultant and Digital Inclusion Specialist, and founder of Eleve AI, helping businesses adopt ethical content creation, AI video and ad workflows, and responsible voice-bot automation. With a background in web development, ADA accessibility, and digital strategy, she supports small businesses in integrating AI in ways that enhance client experience while upholding human values and inclusivity.\n\n" +
-          "As part of the AI Ethics & Education Advisory Council, I contribute to SHE IS AI’s ethical vision, accessibility standards, and community learning initiatives, supporting people-first AI practices and culturally aware innovation across our global movement.",
+    bio: "I ensure that AI systems are built and used responsibly, transparently, and with real people in mind. My role focuses on making sure every tool we create is safe, fair, accessible, and aligned with our values especially for underrepresented communities and small businesses.",
     image: "/assets/team/headshot_hayat.jpg", // Matches screenshot (.jpg)
     linkedin: "https://www.linkedin.com/in/hayuni3/",
     instagram: "https://www.instagram.com/hayuni3/",
+    youtube: "",
     email: "hayusnn@gmail.com"
-  },
- {
-  name: "Sara Sheikh",
-  role: "Team Member",
-  bio:
-    "As a human-first AI and technology consultant, Founder of Saibble, I support women and businesses in adopting AI safely and effectively. With over 30 years of experience in enterprise IT, cybersecurity, and automation, I help organizations design and deploy AI systems that are secure, scalable, and aligned with real business needs.\n\n" +
-    
-    "As part of the AI Delivery Partner and Education Advisory Council, my work focuses on AI adoption, risk awareness, implementation frameworks, and operational automation, helping translate AI education into practical, secure, and human-first solutions that empower women and businesses globally. I am committed to ensuring innovation does not outpace trust, security, or execution.",
-  image: "/assets/team/headshot_sara.png",
-  linkedin: "https://www.linkedin.com/in/sarasheikhconsultant/",
-  instagram: "https://www.instagram.com/saibble_ai_security/",
-  instagram2: "https://www.instagram.com/sara.sheikh.co/",
-  email: "sara@saibble.com"
-}
+  }
 ];
 
 export const Team: React.FC = () => {
@@ -163,8 +160,9 @@ export const Team: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-24">
           <h1 className="text-5xl font-bold text-gray-900 mb-6 font-serif">Meet the Ethics Team</h1>
-          <p style={{ whiteSpace: "pre-line" }} className="text-gray-500 text-sm leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all">
-            {member.bio}
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
+            We are a collective of visionaries, defenders of dignity, and architects of the future. 
+            The women behind the manual are dedicated to ensuring AI serves all of humanity.
           </p>
         </div>
 
@@ -223,6 +221,13 @@ export const Team: React.FC = () => {
                       </a>
                     )}
 
+                    {/* YouTube (New!) */}
+                    {member.youtube && (
+                      <a href={member.youtube} target="_blank" rel="noopener noreferrer" aria-label={`${member.name}'s YouTube`}>
+                        <Youtube className="w-5 h-5 cursor-pointer hover:text-rose-400 transition-colors" strokeWidth={1.5} />
+                      </a>
+                    )}
+
                     {/* Email */}
                     {member.email && (
                       <a href={`mailto:${member.email}`} aria-label={`Email ${member.name}`}>
@@ -235,7 +240,8 @@ export const Team: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
               <p className="text-rose-600 font-medium text-sm mb-3">{member.role}</p>
-              <p className="text-gray-500 text-sm leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all">
+              {/* Added whitespace-pre-line to support \n and explicit line breaks */}
+              <p className="text-gray-500 text-sm leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all whitespace-pre-line">
                 {member.bio}
               </p>
             </motion.div>
