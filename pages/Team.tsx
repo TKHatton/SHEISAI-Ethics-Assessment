@@ -120,7 +120,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     email: "lexi@optimizher.global"
   },
   {
-    name: "Mo Hafez",
+    name: "Mohamed Hafez",
     role: "Team Member",
     bio: "An Ethical Technologist, CEO of ByteWise LLC, and adjunct faculty at Johns Hopkins University, teaching AI and preparing the next generation of technology leaders. With more than 17 years of experience in AI strategy, cybersecurity, and digital transformation, he helps organizations navigate responsible innovation and adopt technology aligned with human values. As the host of the Beyond the Byte podcast, Mr. Hafez sparks global dialogue on AI, ethics, and society’s technological future. His work is dedicated to advancing accountable, human-centered technology while educating and inspiring the next generation of leaders.",
     image: "/assets/team/headshot_mo.jpg",
@@ -132,11 +132,21 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Hayat Ibrahim",
     role: "Team Member",
-    bio: "I ensure that AI systems are built and used responsibly, transparently, and with real people in mind. My role focuses on making sure every tool we create is safe, fair, accessible, and aligned with our values especially for underrepresented communities and small businesses.",
+    bio: "An AI Consultant and Digital Inclusion Specialist, and founder of Eleve AI, helping businesses adopt ethical content creation, AI video and ad workflows, and responsible voice-bot automation. With a background in web development, ADA accessibility, and digital strategy, she supports small businesses in integrating AI in ways that enhance client experience while upholding human values and inclusivity.<br>As part of the AI Ethics & Education Advisory Council, I contribute to SHE IS AI’s ethical vision, accessibility standards, and community learning initiatives, supporting people-first AI practices and culturally aware innovation across our global movement.",
     image: "/assets/team/headshot_hayat.jpg", // Matches screenshot (.jpg)
     linkedin: "https://www.linkedin.com/in/hayuni3/",
     instagram: "https://www.instagram.com/hayuni3/",
     email: "hayusnn@gmail.com"
+  },
+  {
+    name: "Sara Sheikh",
+    role: "Team Member",
+    bio: "As a human-first AI and technology consultant, Founder of Saibble, I support women and businesses in adopting AI safely and effectively. With over 30 years of experience in enterprise IT, cybersecurity, and automation, I help organizations design and deploy AI systems that are secure, scalable, and aligned with real business needs.<br>As part of the AI Delivery Partner and Education Advisory Council, my work focuses on AI adoption, risk awareness, implementation frameworks, and operational automation, helping translate AI education into practical, secure, and human-first solutions that empower women and businesses globally. I am committed to ensuring innovation does not outpace trust, security, or execution.",
+    image: "/assets/team/headshot_sara.png", // Matches screenshot (.jpg)
+    linkedin: "https://www.linkedin.com/in/sarasheikhconsultant/",
+    instagram: "https://www.instagram.com/saibble_ai_security/",
+    instagram: "https://www.instagram.com/sara.sheikh.co/",
+    email: "sara@saibble.com"
   }
 ];
 
