@@ -13,7 +13,8 @@ interface TeamMember {
   instagram?: string; 
   instagram2?: string;// Optional: Paste Instagram URL
   youtube?: string; 
-  substack?: string;  // Optional: Paste YouTube URL
+  substack?: string;
+  tiktok?: string;  // Optional: Paste YouTube URL
   email?: string;     // Optional: Paste Email Address
 }
 
@@ -48,12 +49,13 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "El Wong",
     role: "Regional Lead Canada",
-    bio: "Spearheading our Canadian initiatives and building strong community partnerships to expand our impact, ensuring local voices are central to our global dialogue.",
+    bio: "Advisory Council Member & Regional Lead, Canada. Ethics committee member. She is an AI Educator, Trainer and Business coach with a mission to reach 1 million women and people from underrepresented communities. Her background of coporate training, project and change management and community development intersecting with her passion for AI contributes to her human centric faciitation approach to ensure no one is left behind in the Age of AI.",
     image: "/assets/team/headshot_el.jpeg",
-    linkedin: "",
-    instagram: "",
+    linkedin: "http://www.linkedin.com/in/elewong",
+    instagram: "https://www.instagram.com/superpowers_with_ai",
+    tiktok: "https://www.tiktok.com/@superpowersai",
     youtube: "",
-    email: ""
+    email: "el@superpowerswithai.com"
   },
   {
     name: "Anja Lee",
