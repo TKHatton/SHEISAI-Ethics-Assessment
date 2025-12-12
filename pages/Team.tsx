@@ -142,15 +142,15 @@ const TEAM_MEMBERS: TeamMember[] = [
 
 As part of the AI Ethics & Education Advisory Council, Mr. Hafez contributes strategic guidance on ethical AI governance, human-centered design, and values-aligned innovation. His work supports SHE IS AI’s mission to advance responsible, people-first AI practices while fostering thoughtful leadership, ethical decision-making, and culturally aware technology adoption across its global community.`,
     image: "/assets/team/headshot_mo.jpg",
-    linkedin: "",
-    instagram: "",
+    linkedin: "http://www.linkedin.com/in/hafezm",
+    instagram: "https://www.instagram.com/beyond.the.byte/",
     youtube: "https://www.youtube.com/@BeyondtheBytePodcast",
-    email: ""
+    email: "mo@bytewise-llc.com"
   },
   {
     name: "Hayat Ibrahim",
     role: "Team Member",
-    bio: `An AI Consultant and Digital Inclusion Specialist, and founder of Eleve AI, helping businesses adopt ethical content creation, AI video and ad workflows, and responsible voice-bot automation. With a background in web development, ADA accessibility, and digital strategy, she supports small businesses in integrating AI in ways that enhance client experience while upholding human values and inclusivity.\n\n
+    bio: `An AI Consultant and Digital Inclusion Specialist, and founder of Eleve AI, helping businesses adopt ethical content creation, AI video and ad workflows, and responsible voice-bot automation. With a background in web development, ADA accessibility, and digital strategy, she supports small businesses in integrating AI in ways that enhance client experience while upholding human values and inclusivity.
 
 As part of the AI Ethics & Education Advisory Council, I contribute to SHE IS AI’s ethical vision, accessibility standards, and community learning initiatives, supporting people-first AI practices and culturally aware innovation across our global movement.`,
     image: "/assets/team/headshot_hayat.jpg", // Matches screenshot (.jpg)
