@@ -139,17 +139,18 @@ const TEAM_MEMBERS: TeamMember[] = [
     instagram: "https://www.instagram.com/hayuni3/",
     email: "hayusnn@gmail.com"
   },
-  {
-    name: "Sara Sheikh",
-    role: "Team Member",
-    bio: "As a human-first AI and technology consultant, Founder of Saibble, I support women and businesses in adopting AI safely and effectively. With over 30 years of experience in enterprise IT, cybersecurity, and automation, I help organizations design and deploy AI systems that are secure, scalable, and aligned with real business needs.\n\n" +
-          "As part of the AI Delivery Partner and Education Advisory Council, my work focuses on AI adoption, risk awareness, implementation frameworks, and operational automation, helping translate AI education into practical, secure, and human-first solutions that empower women and businesses globally. I am committed to ensuring innovation does not outpace trust, security, or execution.",
-    image: "/assets/team/headshot_sara.png", // Matches screenshot (.jpg)
-    linkedin: "https://www.linkedin.com/in/sarasheikhconsultant/",
-    instagram: "https://www.instagram.com/saibble_ai_security/",
-    instagram: "https://www.instagram.com/sara.sheikh.co/",
-    email: "sara@saibble.com"
-  }
+ {
+  name: "Sara Sheikh",
+  role: "Team Member",
+  bio:
+    "As a human-first AI and technology consultant, Founder of Saibble, I support women and businesses in adopting AI safely and effectively. With over 30 years of experience in enterprise IT, cybersecurity, and automation, I help organizations design and deploy AI systems that are secure, scalable, and aligned with real business needs.\n\n" +
+    "As part of the AI Delivery Partner and Education Advisory Council, my work focuses on AI adoption, risk awareness, implementation frameworks, and operational automation, helping translate AI education into practical, secure, and human-first solutions that empower women and businesses globally. I am committed to ensuring innovation does not outpace trust, security, or execution.",
+  image: "/assets/team/headshot_sara.png",
+  linkedin: "https://www.linkedin.com/in/sarasheikhconsultant/",
+  instagram: "https://www.instagram.com/saibble_ai_security/",
+  instagram2: "https://www.instagram.com/sara.sheikh.co/",
+  email: "sara@saibble.com"
+}
 ];
 
 export const Team: React.FC = () => {
