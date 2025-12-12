@@ -22,20 +22,21 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Ricquel Harper",
     role: "Director of Education, Ethics & Governance",
-    bio: "Leading our educational initiatives and ensuring our ethical frameworks are integrated into every aspect of our governance and curriculum to empower the next generation of AI leaders.",
+    bio: "As the Director of Education, Ethics and Governance, Ricquel helps guide the ethical frameworks and policy strategies that shape our global work. The focus is on responsible AI development, expanding representation across the AI lifecycle, and ensuring underrepresented communities remain centered. Working collaboratively with partners and contributors, the team supports ethical governance across international initiatives and advances standards for ethical, accountable AI.",
     image: "/assets/team/headshot_ricquel.jpeg",
-    linkedin: "",  // PASTE LINK HERE
+    linkedin: "https://www.linkedin.com/in/ricquelharper/",  // PASTE LINK HERE
     instagram: "", // PASTE LINK HERE
-    email: ""      // PASTE EMAIL HERE
+    email: "ricquel@sheisai.ai"      // PASTE EMAIL HERE
   },
   {
     name: "Amanda Jeffs",
-    role: "Founder | CEO, Operations and Marketing",
-    bio: "The visionary behind SHE IS AI, driving our mission to position one million women as leading AI experts through strategic operations, global marketing, and unwavering advocacy.",
-    image: "/assets/team/headshot_amanda.jpeg",
-    linkedin: "",
-    instagram: "",
-    email: ""
+    role: "Founder | CEO",
+    bio: "As Founder and CEO of SHE IS AI and creator of the AI Advisory Council, Amanda leads with a deep commitment to human-led, ethical, and inclusive AI. Her work centers on ensuring that no voice is left behind as AI reshapes economies, cultures, and opportunity worldwide. With a background in marketing, business, community, coaching, and mentoring university students, she brings together a global collective of experts to guide responsible AI adoption, amplify diverse perspectives, and translate ethics into practical strategy. Through the SHE IS AI community and ecosystem, Amanda supports individuals and organisations to navigate the AI landscape safely, ethically, and with clarity, bridging innovation, integrity, and real-world impact.",
+    image: "/assets/team/headshot_amanda.jpg",
+    linkedin: "https://www.linkedin.com/in/amandajeffs",
+    instagram: "https://www.instagram.com/amandajeffsnz",
+    substack: "https://amandajeffsnz.substack.com/",
+    email: "amanda@sheisai.ai"
   },
   {
     name: "El Wong",
@@ -68,7 +69,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Wayne Morgan",
     role: "President",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "/assets/team/headshot_wayne.jpeg", // Matches screenshot (lowercase w, .jpeg)
+    image: "/assets/team/headshot_wayne.jpg", // Matches screenshot (lowercase w, .jpeg)
     linkedin: "",
     instagram: "",
     email: "wayne@sheisai.ai"
@@ -80,25 +81,25 @@ const TEAM_MEMBERS: TeamMember[] = [
     image: "/assets/team/headshot_nagawa.jpeg",
     linkedin: "",
     instagram: "",
-    email: ""
+    email: "nagawa@sheisai.ai"
   },
   {
     name: "Lyudmyla Dickinson",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
     image: "/assets/team/headshot_lyudmyla.png", // Matches screenshot (.png)
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/lyudmyla-dickinson-457328331/",
     instagram: "",
-    email: ""
+    email: "lyunix13@gmail.com"
   },
   {
     name: "Julia Lewis",
-    role: "Team Member",
+    role: "Advisory Council Member & Queensland Regional Lead",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
     image: "/assets/team/headshot_julia.jpeg",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/julia-lewis-genai/",
     instagram: "",
-    email: ""
+    email: "julia@margaritamedia.com.au"
   },
   {
     name: "Jamie Johnson",
