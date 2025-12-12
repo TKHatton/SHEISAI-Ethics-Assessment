@@ -11,6 +11,9 @@ interface TeamMember {
   image: string;
   linkedin?: string;  // Optional: Paste LinkedIn URL
   instagram?: string; // Optional: Paste Instagram URL
+  instagram2?: string;
+  youtube?: string;
+  substack?: string;
   email?: string;     // Optional: Paste Email Address
 }
 
@@ -144,6 +147,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   role: "Team Member",
   bio:
     "As a human-first AI and technology consultant, Founder of Saibble, I support women and businesses in adopting AI safely and effectively. With over 30 years of experience in enterprise IT, cybersecurity, and automation, I help organizations design and deploy AI systems that are secure, scalable, and aligned with real business needs.\n\n" +
+    
     "As part of the AI Delivery Partner and Education Advisory Council, my work focuses on AI adoption, risk awareness, implementation frameworks, and operational automation, helping translate AI education into practical, secure, and human-first solutions that empower women and businesses globally. I am committed to ensuring innovation does not outpace trust, security, or execution.",
   image: "/assets/team/headshot_sara.png",
   linkedin: "https://www.linkedin.com/in/sarasheikhconsultant/",
@@ -159,7 +163,8 @@ export const Team: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-24">
           <h1 className="text-5xl font-bold text-gray-900 mb-6 font-serif">Meet the Ethics Team</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all">
+            {member.bio}
             We are a collective of visionaries, defenders of dignity, and architects of the future. 
             The women behind the manual are dedicated to ensuring AI serves all of humanity.
           </p>
