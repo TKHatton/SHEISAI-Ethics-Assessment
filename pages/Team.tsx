@@ -11,7 +11,8 @@ interface TeamMember {
   image: string;
   linkedin?: string;  // Optional: Paste LinkedIn URL
   instagram?: string; // Optional: Paste Instagram URL
-  youtube?: string;   // Optional: Paste YouTube URL
+  youtube?: string; 
+  substack?: string;  // Optional: Paste YouTube URL
   email?: string;     // Optional: Paste Email Address
 }
 
@@ -25,22 +26,23 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Ricquel Harper",
     role: "Director of Education, Ethics & Governance",
-    bio: "Leading our educational initiatives and ensuring our ethical frameworks are integrated into every aspect of our governance and curriculum to empower the next generation of AI leaders.",
+    bio: "As the Director of Education, Ethics and Governance, Ricquel helps guide the ethical frameworks and policy strategies that shape our global work. The focus is on responsible AI development, expanding representation across the AI lifecycle, and ensuring underrepresented communities remain centered. Working collaboratively with partners and contributors, the team supports ethical governance across international initiatives and advances standards for ethical, accountable AI.",
     image: "/assets/team/headshot_ricquel.jpeg",
-    linkedin: "",  // PASTE LINK HERE
+    linkedin: "https://www.linkedin.com/in/ricquelharper/",  // PASTE LINK HERE
     instagram: "", // PASTE LINK HERE
     youtube: "",   // PASTE LINK HERE
-    email: ""      // PASTE EMAIL HERE
+    email: "ricquel@sheisai.ai"      // PASTE EMAIL HERE
   },
   {
     name: "Amanda Jeffs",
     role: "Founder | CEO, Operations and Marketing",
-    bio: "The visionary behind SHE IS AI, driving our mission to position one million women as leading AI experts through strategic operations, global marketing, and unwavering advocacy.",
-    image: "/assets/team/headshot_amanda.jpeg",
-    linkedin: "",
-    instagram: "",
+    bio: "As Founder and CEO of SHE IS AI and creator of the AI Advisory Council, Amanda leads with a deep commitment to human-led, ethical, and inclusive AI. Her work centers on ensuring that no voice is left behind as AI reshapes economies, cultures, and opportunity worldwide. With a background in marketing, business, community, coaching, and mentoring university students, she brings together a global collective of experts to guide responsible AI adoption, amplify diverse perspectives, and translate ethics into practical strategy. Through the SHE IS AI community and ecosystem, Amanda supports individuals and organisations to navigate the AI landscape safely, ethically, and with clarity, bridging innovation, integrity, and real-world impact.",
+    image: "/assets/team/headshot_amanda.jpg",
+    linkedin: "https://www.linkedin.com/in/amandajeffs",
+    instagram: "https://www.instagram.com/amandajeffsnz",
     youtube: "",
-    email: ""
+    substack: "https://amandajeffsnz.substack.com/",
+    email: "amanda@sheisai.ai"
   },
   {
     name: "El Wong",
@@ -75,9 +77,9 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Wayne Morgan",
     role: "President",
-    bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "/assets/team/headshot_wayne.jpeg", // Matches screenshot (lowercase w, .jpeg)
-    linkedin: "",
+    bio: "As President of SHE IS AI, Wayne Morgan is committed to fostering a more inclusive, culturally diverse, and ethically driven future—both in the development of people and in the evolution of responsible, values-based business. He leads SHE IS AI’s international relations and strategic partnerships, drawing on decades of global experience to build bridges between technology, humanity, and culture. Wayne brings a grounded, people-first mindset to the advancement of ethical AI and sustainable leadership.",
+    image: "/assets/team/headshot_wayne.jpg", // Matches screenshot (lowercase w, .jpeg)
+    linkedin: "https://www.linkedin.com/in/wayne-morgan",
     instagram: "",
     youtube: "",
     email: "wayne@sheisai.ai"
@@ -87,30 +89,30 @@ const TEAM_MEMBERS: TeamMember[] = [
     role: "Vice President",
     bio: "Overseeing strategic growth and operational excellence, ensuring our global initiatives align with our core mission of empowerment, inclusion, and ethical innovation.",
     image: "/assets/team/headshot_nagawa.jpeg",
-    linkedin: "",
+    linkedin: "http://www.linkedin.com/in/nagawa-l",
     instagram: "",
     youtube: "",
-    email: ""
+    email: "nagawa@sheisai.ai"
   },
   {
     name: "Lyudmyla Dickinson",
     role: "Team Member",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
     image: "/assets/team/headshot_lyudmyla.png", // Matches screenshot (.png)
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/lyudmyla-dickinson-457328331/",
     instagram: "",
     youtube: "",
-    email: ""
+    email: "lyunix13@gmail.com"
   },
   {
     name: "Julia Lewis",
-    role: "Team Member",
+    role: "Queensland Regional Lead",
     bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
     image: "/assets/team/headshot_julia.jpeg",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/julia-lewis-genai/",
     instagram: "",
     youtube: "",
-    email: ""
+    email: "julia@margaritamedia.com.au"
   },
   {
     name: "Jamie Johnson",
@@ -126,31 +128,48 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Lexi Gibert",
     role: "Team Member",
     bio: "AI Ethics Advisory Council Member",
-    image: "/assets/team/headshot_lexi.jpeg",
-    linkedin: "http://www.linkedin.com/in/lllexigilbert",
+    image: "/assets/team/headshot_lexi.jpg",
+    linkedin: "http://www.linkedin.com/in/lexigilbert",
     instagram: "",
     youtube: "",
     email: "lexi@optimizher.global"
   },
   {
-    name: "Mo Hafez",
+    name: "Mohamed Hafez",
     role: "Team Member",
-    bio: "Dedicated to advancing our mission of ethical AI and inclusive leadership.",
-    image: "/assets/team/headshot_mo.jpeg",
+    bio: `As an Ethical AI & Technology Advisor and CEO of ByteWise LLC, Mr. Hafez brings over 17 years of experience in digital transformation, AI strategy, and responsible technology adoption. He advises organizations on aligning AI innovation with human values, accountability, and long-term societal impact. As an adjunct faculty member at Johns Hopkins University and host of the Beyond the Byte podcast, he bridges executive leadership, education, and public discourse to make ethical AI practical, accessible, and actionable.
+
+As part of the AI Ethics & Education Advisory Council, Mr. Hafez contributes strategic guidance on ethical AI governance, human-centered design, and values-aligned innovation. His work supports SHE IS AI’s mission to advance responsible, people-first AI practices while fostering thoughtful leadership, ethical decision-making, and culturally aware technology adoption across its global community.`,
+    image: "/assets/team/headshot_mo.jpg",
     linkedin: "",
     instagram: "",
-    youtube: "",
+    youtube: "https://www.youtube.com/@BeyondtheBytePodcast",
     email: ""
   },
   {
     name: "Hayat Ibrahim",
     role: "Team Member",
-    bio: "I ensure that AI systems are built and used responsibly, transparently, and with real people in mind. My role focuses on making sure every tool we create is safe, fair, accessible, and aligned with our values especially for underrepresented communities and small businesses.",
+    bio: `An AI Consultant and Digital Inclusion Specialist, and founder of Eleve AI, helping businesses adopt ethical content creation, AI video and ad workflows, and responsible voice-bot automation. With a background in web development, ADA accessibility, and digital strategy, she supports small businesses in integrating AI in ways that enhance client experience while upholding human values and inclusivity.\n\n
+
+    As part of the AI Ethics & Education Advisory Council, I contribute to SHE IS AI’s ethical vision, accessibility standards, and community learning initiatives, supporting people-first AI practices and culturally aware innovation across our global movement.`,
     image: "/assets/team/headshot_hayat.jpg", // Matches screenshot (.jpg)
     linkedin: "https://www.linkedin.com/in/hayuni3/",
     instagram: "https://www.instagram.com/hayuni3/",
     youtube: "",
     email: "hayusnn@gmail.com"
+  },
+  {
+    name: "Sara Sheikh",
+    role: "Team Member",
+    bio: `As a human-first AI and technology consultant, Founder of Saibble, I support women and businesses in adopting AI safely and effectively. With over 30 years of experience in enterprise IT, cybersecurity, and automation, I help organizations design and deploy AI systems that are secure, scalable, and aligned with real business needs.
+
+As part of the AI Delivery Partner and Education Advisory Council, my work focuses on AI adoption, risk awareness, implementation frameworks, and operational automation, helping translate AI education into practical, secure, and human-first solutions that empower women and businesses globally. I am committed to ensuring innovation does not outpace trust, security, or execution.`,
+    image: "/assets/team/headshot_sara.png", // Matches screenshot (.jpg)
+    linkedin: "https://www.linkedin.com/in/sarasheikhconsultant/",
+    instagram: "https://www.instagram.com/sara.sheikh.co/",
+    instagram2: "https://www.instagram.com/saibble_ai_security/",
+    youtube: "",
+    email: "sara@saibble.com"
   }
 ];
 
