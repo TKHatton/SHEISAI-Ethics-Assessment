@@ -10,7 +10,8 @@ interface TeamMember {
   bio: string;
   image: string;
   linkedin?: string;  // Optional: Paste LinkedIn URL
-  instagram?: string; // Optional: Paste Instagram URL
+  instagram?: string; 
+  instagram2?: string;// Optional: Paste Instagram URL
   youtube?: string; 
   substack?: string;  // Optional: Paste YouTube URL
   email?: string;     // Optional: Paste Email Address
@@ -151,7 +152,7 @@ As part of the AI Ethics & Education Advisory Council, Mr. Hafez contributes str
     role: "Team Member",
     bio: `An AI Consultant and Digital Inclusion Specialist, and founder of Eleve AI, helping businesses adopt ethical content creation, AI video and ad workflows, and responsible voice-bot automation. With a background in web development, ADA accessibility, and digital strategy, she supports small businesses in integrating AI in ways that enhance client experience while upholding human values and inclusivity.\n\n
 
-    As part of the AI Ethics & Education Advisory Council, I contribute to SHE IS AI’s ethical vision, accessibility standards, and community learning initiatives, supporting people-first AI practices and culturally aware innovation across our global movement.`,
+As part of the AI Ethics & Education Advisory Council, I contribute to SHE IS AI’s ethical vision, accessibility standards, and community learning initiatives, supporting people-first AI practices and culturally aware innovation across our global movement.`,
     image: "/assets/team/headshot_hayat.jpg", // Matches screenshot (.jpg)
     linkedin: "https://www.linkedin.com/in/hayuni3/",
     instagram: "https://www.instagram.com/hayuni3/",
