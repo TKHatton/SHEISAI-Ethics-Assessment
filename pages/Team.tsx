@@ -163,10 +163,9 @@ export const Team: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-24">
           <h1 className="text-5xl font-bold text-gray-900 mb-6 font-serif">Meet the Ethics Team</h1>
-          <p className="text-gray-500 text-sm leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all">
+          <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line line-clamp-4 group-hover:line-clamp-none transition-all">
             {member.bio}
           </p>
-
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
