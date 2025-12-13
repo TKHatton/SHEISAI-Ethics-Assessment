@@ -133,7 +133,14 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Lexi Gilbert",
     role: "Team Member",
-    bio: "As part of the AI Ethics & Education Advisory Council, I contribute to SHE IS AI’s ethical vision, educational design, and community initiatives. I create and facilitate ethics-centered courses and support programs that honor culture, inclusivity, and human-first leadership across our global movement. My work reinforces our shared commitment to responsible, culturally aware AI adoption.",
+    bio: `Lexi Gilbert supports leaders and organizations in adopting AI responsibly, with a focus on clarity, cultural awareness, and trust-first decision-making. Her perspective is that AI adoption is a leadership challenge before it’s a technology one, and she helps leaders translate responsible AI principles into consistent day-to-day practice.
+
+A certified AI Strategist, Fractional CAIO, and business owner, Lexi brings 35+ years of entrepreneurial leadership and 16 years of HR leadership experience across nine industries.
+Her work is shaped by ongoing AI education and continuous learning, staying current through emerging research, global responsible-use standards, and active participation in cross-sector AI communities so her guidance remains grounded, relevant, and future-aware.
+
+Her mission is to help leaders and organizations adopt AI responsibly, embedding human-first ethics and cultural awareness into decisions, systems, and everyday practice.
+As a SHE IS AI Ambassador and member of the AI Ethics & Education Advisory Council, Lexi contributes to SHE IS AI’s ethical vision, educational design, and community initiatives. She creates and facilitates ethics-centered courses and support programs that honour culture, inclusivity, and human-first leadership across the global movement, reinforcing a shared commitment to responsible, culturally aware AI understanding and use.
+`,
     image: "/assets/team/headshot_lexi2.jpg",
     linkedin: "http://www.linkedin.com/in/lexigilbert",
     instagram: "",
