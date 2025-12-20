@@ -122,7 +122,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Jamie Johnson",
     role: "Team Member",
-    bio: "Jamie is a brand designer, educator, and AI practitioner with over 25 years of experience supporting people through learning, change, and creative growth. Her work centers on helping individuals and organizations approach AI with clarity, confidence, and care—especially at the beginning stages, where fear, resistance, or uncertainty are common.  As part of the AI Ethics & Education Advisory Council, Jamie contributes to SHE IS AI’s mission by helping shape education, dialogue, and support systems that prioritize ethical, inclusive, and human-first AI use. Her work focuses on demystifying emerging technology, fostering trust, and ensuring people feel supported and empowered as they adapt to evolving tools and ways of working.",
+    bio: "Jamie Nikole serves as a member of the SHE IS AI Ethics & Education Advisory Council, supporting the organization’s mission to advance ethical, inclusive, and human-centered AI adoption. She brings extensive experience helping individuals and organizations navigate the emotional and cultural challenges of adopting new technologies—especially fear, resistance, and uncertainty. Her work focuses on demystifying AI for beginners and fostering responsible, people-first practices that honor dignity, creativity, and trust as technology evolves.",
     image: "/assets/team/headshot_jamie.jpeg",
     linkedin: "https://www.linkedin.com/in/jamienikoledesign/",
     instagram: "",
@@ -133,14 +133,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Lexi Gilbert",
     role: "Team Member",
-    bio: `Lexi Gilbert supports leaders and organizations in adopting AI responsibly, with a focus on clarity, cultural awareness, and trust-first decision-making. Her perspective is that AI adoption is a leadership challenge before it’s a technology one, and she helps leaders translate responsible AI principles into consistent day-to-day practice.
-
-A certified AI Strategist, Fractional CAIO, and business owner, Lexi brings 35+ years of entrepreneurial leadership and 16 years of HR leadership experience across nine industries.
-Her work is shaped by ongoing AI education and continuous learning, staying current through emerging research, global responsible-use standards, and active participation in cross-sector AI communities so her guidance remains grounded, relevant, and future-aware.
-
-Her mission is to help leaders and organizations adopt AI responsibly, embedding human-first ethics and cultural awareness into decisions, systems, and everyday practice.
-As a SHE IS AI Ambassador and member of the AI Ethics & Education Advisory Council, Lexi contributes to SHE IS AI’s ethical vision, educational design, and community initiatives. She creates and facilitates ethics-centered courses and support programs that honour culture, inclusivity, and human-first leadership across the global movement, reinforcing a shared commitment to responsible, culturally aware AI understanding and use.
-`,
+    bio: "Lexi Gilbert equips leaders and organizations to adopt AI responsibly by strengthening clarity, cultural alignment, and trust in everyday use. She translates responsible AI into practical guidance teams can apply immediately, including decision habits, workflow guardrails, and human-impact considerations. A certified AI Strategist, Fractional CAIO, and facilitator, Lexi brings 35+ years of entrepreneurial leadership and HR leadership across nine industries. She stays current through emerging AI changes, global AI governance guidance, and international standards for responsible use. As a SHE IS AI Ambassador and member of the Global AI Ethics & Education Advisory Council, she contributes to education design and community initiatives that make responsible AI accessible, culturally aware, and adoptable.",
     image: "/assets/team/headshot_lexi2.jpg",
     linkedin: "http://www.linkedin.com/in/lexigilbert",
     instagram: "",
@@ -163,9 +156,9 @@ As part of the AI Ethics & Education Advisory Council, Mr. Hafez contributes str
   {
     name: "Hayat Ibrahim",
     role: "Team Member",
-    bio: `An AI Consultant and Digital Inclusion Specialist, and founder of Eleve AI, helping businesses adopt ethical content creation, AI video and ad workflows, and responsible voice-bot automation. With a background in web development, ADA accessibility, and digital strategy, she supports small businesses in integrating AI in ways that enhance client experience while upholding human values and inclusivity.
+    bio: `An AI Consultant and Digital Inclusion Specialist dedicated to ensuring emerging technologies remain accessible, ethical, and rooted in human values. With experience in web development, ADA accessibility, and AI-supported content and communication systems, she focuses on bridging technical innovation with inclusive, people-centered design, advocating for AI that protects dignity and expands access for underrepresented communities.
 
-As part of the AI Ethics & Education Advisory Council, I contribute to SHE IS AI’s ethical vision, accessibility standards, and community learning initiatives, supporting people-first AI practices and culturally aware innovation across our global movement.`,
+As part of the AI Ethics & Education Advisory Council, she supports the development of people-first guidelines, accessibility standards, Inclusion and community learning initiatives that promote transparent, equitable, and culturally aware AI adoption across the global SHE IS AI movement.`,
     image: "/assets/team/headshot_hayat.jpg", // Matches screenshot (.jpg)
     linkedin: "https://www.linkedin.com/in/hayuni3/",
     instagram: "https://www.instagram.com/hayuni3/",
